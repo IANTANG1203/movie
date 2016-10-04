@@ -1,34 +1,11 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p>
-    <!-- use router-link component for navigation. -->
-    <!-- specify the link by passing the `to` prop. -->
-    <!-- <router-link> will be rendered as an `<a>` tag by default -->
-    <router-link to="/foo">Go to Foo</router-link>
-    <router-link to="/bar">Go to Bar</router-link>
-    </p>
-    <!-- route outlet -->
-    <!-- component matched by the route will render here -->
+    <nav>
+      <router-link to="/">Main</router-link>
+      <router-link to="/foo">Go to Hi</router-link>
+      <router-link to="/bar">Go to Hello</router-link>
+    </nav>
     <router-view></router-view>
-    <p>
-      To get a better understanding of how this boilerplate works, check out
-      <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
-      It is also recommended to go through the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-      If you have any issues with the setup, please file an issue at this boilerplate's
-      <a href="https://github.com/vuejs-templates/webpack" target="_blank">repository</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
   </div>
 </template>
 
@@ -42,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   height: 100%;
 }
@@ -69,6 +46,22 @@ body {
 
 .logo {
   width: 100px;
-  height: 100px
+  height: 100px;
+}
+
+#app nav {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  background-color: #3f3;
+  text-align:left;
+  a {
+    display: inline-block;
+    font-size: 22px;
+    padding: 5px;
+    color: black;
+    background-color: #0c0;
+  }
 }
 </style>

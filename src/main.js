@@ -5,10 +5,12 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import App from './App'
+import Main from './components/Main'
 import Hello from './components/Hello'
 import Hi from './components/Hi'
 
 const routes = [
+  { path: '/', component: Main },
   { path: '/foo', component: Hello },
   { path: '/bar', component: Hi }
 ]

@@ -7,7 +7,7 @@
 export default {
   data () {
     return {
-      msg: 'Hi!'
+      msg: 'Hi! this is page3'
     }
   }
 }

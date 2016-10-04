@@ -1,13 +1,14 @@
 <template lang="jade">
   div.hello
     h1 {{ msg }}
+    p it's glad to see you
 </template>
 
 <script>
 export default {
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello! This is page 2'
     }
   }
 }
