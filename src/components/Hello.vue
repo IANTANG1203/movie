@@ -2,13 +2,16 @@
   .hello
     h1 {{ msg }}
     p it's glad to see you
+    .ui.list
+      .item(v-for="i in items") {{i}}
 </template>
 
 <script>
 export default {
   data () {
     return {
-      msg: 'Hello! This is page 2'
+      msg: 'Hello! This is page 2',
+      items: ['aa', 'bb', 'cc']
     }
   }
 }

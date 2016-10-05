@@ -1,15 +1,16 @@
 <template>
   <div id="app">
     <nav class="ui three item menu">
-      <router-link to="/" class="item">
+      <router-link to="/" class="item" :class="{active: $route.path=='/'}">
         <img src="./assets/logo.png" class="small">
       </router-link>
-      <router-link to="/foo" class="item">一日上手</router-link>
-      <div class="ui simple dropdown item">
+      <router-link to="/foo" class="item" :class="{active: $route.path=='/foo'}">一日上手</router-link>
+      <div class="ui simple dropdown item" :class="{active: $route.path!=='/' && $route.path!=='/foo'}">
         延伸學習
         <i class="dropdown icon"></i>
         <div class="menu">
-          <router-link to="/bar" class="item">回到起點</router-link>
+          <router-link to="/bar" class="item" :class="{active: $route.path=='/bar'}">回到起點</router-link>
+          <router-link to="/baz" class="item" :class="{active: $route.path=='/baz'}">baz</router-link>
         </div>
 
       </div>
