@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <nav class="ui menu">
-      <router-link to="/" class="item">Main</router-link>
-      <router-link to="/foo" class="item">Go to Hi</router-link>
-      <router-link to="/bar" class="item">Go to Hello</router-link>
+    <nav class="ui three item menu">
+      <router-link to="/" class="item">
+        <img src="./assets/logo.png" class="small">
+      </router-link>
+      <router-link to="/foo" class="item">一日上手</router-link>
+      <div class="ui simple dropdown item">
+        延伸學習
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <router-link to="/bar" class="item">回到起點</router-link>
+        </div>
+
+      </div>
     </nav>
     <div id="main">
       <router-view></router-view>
@@ -24,6 +33,7 @@ export default {
 <style lang="scss">
 html {
   height: 100%;
+  font-size: 18px;
 }
 
 body {
@@ -37,10 +47,13 @@ body {
   color: #2c3e50;
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
+  font-size: 18px;
+  font-size: 3vm;
+  font-size: 3vmin;
   text-align: center;
 }
 
-#app a {
+#app a, #app nav .ui.dropdown.simple.item {
   color: #42b983;
   text-decoration: none;
 }
@@ -52,7 +65,7 @@ body {
 
 #main {
   position: absolute;
-  top: 50px;
+  top: 150px;
   width: 100%;
 }
 
@@ -60,15 +73,5 @@ body {
   position: fixed;
   top:0;
   left:0;
-  width: 100%;
-  background-color: #3f3;
-  text-align:left;
-  a {
-    display: inline-block;
-    font-size: 22px;
-    padding: 5px;
-    color: black;
-    background-color: #0c0;
-  }
 }
 </style>

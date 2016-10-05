@@ -1,25 +1,21 @@
 <template lang="jade">
   .hello
-    h1 {{ msg }}
     img.logo(src="../assets/logo.png")
-    p
-      | To get a better understanding of how this boilerplate works, check out
-      a(href='http://vuejs-templates.github.io/webpack', target='_blank') its documentation
-      | .
-      |       It is also recommended to go through the docs for
-      a(href='http://webpack.github.io/', target='_blank') Webpack
-      |  and
-      a(href='http://vuejs.github.io/vue-loader/', target='_blank') vue-loader
-      | .
-      |       If you have any issues with the setup, please file an issue at this boilerplate's
-      a(href='https://github.com/vuejs-templates/webpack', target='_blank') repository
-      | .
-    p
-      | You may also want to checkout
-      a(href='https://github.com/vuejs/vue-router/', target='_blank') vue-router
-      |  for routing and
-      a(href='https://github.com/vuejs/vuex/', target='_blank') vuex
-      |  for state management.
+    h2 {{msg}}
+    p 
+      | Vue本身沒有意思，讀起來像View，也就是顯示層的意思。
+
+    .ui.segment
+      p
+        | 一個前端MVVM框架，
+        br
+        | 結合了部份Angular的寫法和類似React的虛擬DOM引擎，
+        br
+        | 特色是學習曲線平緩，可以快速上手，並保有將作品放大規模的潛能。
+        br
+        br
+        | 詳見：
+        a(href="https://vuejs.org/guide/", target="_blank") Vue官網
 
 </template>
 
@@ -27,7 +23,7 @@
 export default {
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Vue是什麼?'
     }
   }
 }
