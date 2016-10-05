@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Main</router-link>
-      <router-link to="/foo">Go to Hi</router-link>
-      <router-link to="/bar">Go to Hello</router-link>
+    <nav class="ui menu">
+      <router-link to="/" class="item">Main</router-link>
+      <router-link to="/foo" class="item">Go to Hi</router-link>
+      <router-link to="/bar" class="item">Go to Hello</router-link>
     </nav>
-    <router-view></router-view>
+    <div id="main">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -33,7 +35,6 @@ body {
 
 #app {
   color: #2c3e50;
-  margin-top: -100px;
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
@@ -47,6 +48,12 @@ body {
 .logo {
   width: 100px;
   height: 100px;
+}
+
+#main {
+  position: absolute;
+  top: 50px;
+  width: 100%;
 }
 
 #app nav {

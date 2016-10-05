@@ -1,5 +1,5 @@
 <template lang="jade">
-  div.hello
+  .hello
     h1 {{ msg }}
     p it's glad to see you
 </template>

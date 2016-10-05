@@ -1,5 +1,5 @@
 <template lang="jade">
-  div.hello
+  .hello
     h1 {{ msg }}
     img.logo(src="../assets/logo.png")
     p
