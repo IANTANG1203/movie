@@ -5,14 +5,14 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import App from './App'
-import Main from './components/Main'
-import Hello from './components/Hello'
-import Hi from './components/Hi'
+import Home from './components/Home'
+import Start from './components/Start'
+import More from './components/More'
 
 const routes = [
-  { path: '/', component: Main },
-  { path: '/foo', component: Hello },
-  { path: '/bar', component: Hi }
+  { path: '/', component: Home },
+  { path: '/start', component: Start },
+  { path: '/more', component: More }
 ]
 
 const router = new VueRouter({

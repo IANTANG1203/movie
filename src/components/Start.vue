@@ -1,7 +1,7 @@
 <template lang="jade">
   .hello
     h1 {{ msg }}
-    p it's glad to see you
+    p 你只需要先備html,css,javscript的知識就行了
     .ui.list
       .item(v-for="i in items") {{i}}
 </template>
@@ -10,7 +10,7 @@
 export default {
   data () {
     return {
-      msg: 'Hello! This is page 2',
+      msg: '那就來開始吧！',
       items: ['aa', 'bb', 'cc']
     }
   }

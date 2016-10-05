@@ -4,15 +4,14 @@
       <router-link to="/" class="item" :class="{active: $route.path=='/'}">
         <img src="./assets/logo.png" class="small">
       </router-link>
-      <router-link to="/foo" class="item" :class="{active: $route.path=='/foo'}">一日上手</router-link>
-      <div class="ui simple dropdown item" :class="{active: $route.path!=='/' && $route.path!=='/foo'}">
+      <router-link to="/start" class="item" :class="{active: $route.path=='/start'}">一日上手</router-link>
+      <div class="ui simple dropdown item" :class="{active: $route.path!=='/' && $route.path!=='/start'}">
         延伸學習
         <i class="dropdown icon"></i>
         <div class="menu">
-          <router-link to="/bar" class="item" :class="{active: $route.path=='/bar'}">回到起點</router-link>
+          <router-link to="/more" class="item" :class="{active: $route.path=='/more'}">回到起點</router-link>
           <router-link to="/baz" class="item" :class="{active: $route.path=='/baz'}">baz</router-link>
         </div>
-
       </div>
     </nav>
     <div id="main">
@@ -22,11 +21,11 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Home from './components/Home'
 
 export default {
   components: {
-    Hello
+    Home
   }
 }
 </script>
