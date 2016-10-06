@@ -66,6 +66,7 @@ body {
 #main {
   position: absolute;
   top: 150px;
+  left: 0;
   width: 100%;
 }
 
