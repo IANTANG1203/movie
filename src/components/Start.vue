@@ -11,6 +11,9 @@
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
         span(v-else) {{i.t}}
+    .ui.divider
+    p(:class="{red:countAll(8)}") 預計{{countAll()}}小時
+      span(v-if="countAll(8)")!(超過一天了)
 </template>
 
 <script>
@@ -24,6 +27,7 @@ export default {
       {t: '部件化', checked: true},
       {t: '路由', checked: false},
       {t: '資料綁定', checked: false},
+      {t: '事件與方法', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
       {t: '跨部件溝通', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
       {t: '哈哈', checked: true},
       {t: '與github-page協同', checked: false},
@@ -33,6 +37,14 @@ export default {
       {t: '過渡與動畫', checked: false},
       {t: '呵呵', checked: true}]
     }
+  },
+  methods: {
+    countAll: function (n) {
+      var num = this.items.filter(function (o) {
+        return o.checked
+      }).length
+      return n ? num > n : num
+    }
   }
 }
 </script>
@@ -41,6 +53,10 @@ export default {
 <style scoped>
 h1 {
   color: #42b983;
+}
+
+.red {
+  color: red;
 }
 
 .list {
