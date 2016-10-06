@@ -29,7 +29,7 @@ export default {
       {t: '資料綁定', checked: false},
       {t: '事件與方法', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
       {t: '跨部件溝通', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
-      {t: '哈哈', checked: true},
+      {t: '狀態處理', checked: false},
       {t: '與github-page協同', checked: false},
       {t: 'Chrome開發套件', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
       {t: '安裝其他函式庫', checked: false},
