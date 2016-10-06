@@ -33,7 +33,7 @@ export default {
 <style lang="scss">
 html {
   height: 100%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 body {

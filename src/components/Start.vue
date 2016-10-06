@@ -61,6 +61,7 @@ h1 {
 
 .list {
   width: 50%;
+  font-size: 1rem;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
