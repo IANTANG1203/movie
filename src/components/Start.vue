@@ -2,9 +2,9 @@
   .hello
     h1 {{ msg }}
     p 你只需要先備
-      | html+
-      | css+
-      | javscript
+      | html +
+      | css +
+      | javascript
       | 的知識就行了
     .ui.list
       .item(v-for="i in items", :class="{active: i.checked}") 
@@ -25,10 +25,13 @@ export default {
       {t: '路由', checked: false},
       {t: '資料綁定', checked: false},
       {t: '跨部件溝通', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
-      {t: '哈哈', checked: false},
+      {t: '哈哈', checked: true},
       {t: '與github-page協同', checked: false},
       {t: 'Chrome開發套件', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
-      {t: '特效', checked: false}]
+      {t: '安裝其他函式庫', checked: false},
+      {t: '安裝Vue模組', checked: false},
+      {t: '過渡與動畫', checked: false},
+      {t: '呵呵', checked: true}]
     }
   }
 }
@@ -49,6 +52,13 @@ h1 {
 
 .list .item:not(.active) {
   color: gray;
+}
+
+.list .item:not(.active) a {
+  color: #aca !important;
+}
+.list .item.active a {
+  text-decoration: underline !important;
 }
 
 .list .item input{
