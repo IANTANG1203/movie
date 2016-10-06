@@ -11,7 +11,7 @@ export default {
   data () {
     return {
       msg: '那就來開始吧！',
-      items: ['aa', 'bb', 'cc']
+      items: ['安裝CLI', '起始包', '部件化', '路由', '資料綁定', '哈哈', '特效']
     }
   }
 }
