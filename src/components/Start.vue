@@ -43,7 +43,7 @@ export default {
       {t: 'Chrome開發套件', p: '23', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
       {t: '安裝其他函式庫', p: '23', checked: false},
       {t: '安裝Vue模組', p: '2', checked: false},
-      {t: '過渡與動畫', p: '3', checked: false}]
+      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}]
     }
   },
   methods: {
