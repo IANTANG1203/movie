@@ -7,14 +7,9 @@
       | javascript
       | 的知識就行了
     p
-      input(type="radio", name="p", value="0", checked="true")
-      | 自訂
-      input(type="radio", name="p", value="1")
-      | 起始包
-      input(type="radio", name="p", value="2")
-      | 工程師
-      input(type="radio", name="p", value="3")
-      | 設計師
+      span(v-for="(t, $index) in ['自訂', '起始', '工程', '設計']")
+        input(type="radio", name="p", :value="$index", v-model="p", @change="checkP(p)")
+        | {{t}}
     .ui.list
       .item(v-for="i in items", :class="{active: i.checked}") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
@@ -33,21 +28,22 @@
 export default {
   data () {
     return {
+      p: 0,
       msg: '那就來開始吧！',
       items: [
-      {t: '命令列工具CLI', checked: false, h: 'https://github.com/vuejs/vue-cli'},
-      {t: '初始化', checked: false},
-      {t: '部件化', checked: false},
-      {t: '路由', checked: false},
-      {t: '資料綁定', checked: false},
-      {t: '事件與方法', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
-      {t: '跨部件溝通', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
-      {t: '狀態處理', checked: false},
-      {t: '與github-page協同', checked: false},
-      {t: 'Chrome開發套件', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
-      {t: '安裝其他函式庫', checked: false},
-      {t: '安裝Vue模組', checked: false},
-      {t: '過渡與動畫', checked: false}]
+      {t: '命令列工具CLI', p: '123', checked: false, h: 'https://github.com/vuejs/vue-cli'},
+      {t: '初始化', p: '123', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
+      {t: '部件化', p: '123', checked: false, h: 'https://vuejs.org/guide/components.html'},
+      {t: '路由', p: '12', checked: false, h: 'https://vuejs.org/guide/routing.html'},
+      {t: '資料綁定', p: '123', checked: false},
+      {t: '事件與方法', p: '12', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
+      {t: '跨部件溝通', p: '2', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
+      {t: '狀態處理', p: '2', checked: false},
+      {t: '與github-page協同', p: '12', checked: false},
+      {t: 'Chrome開發套件', p: '23', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
+      {t: '安裝其他函式庫', p: '23', checked: false},
+      {t: '安裝Vue模組', p: '2', checked: false},
+      {t: '過渡與動畫', p: '3', checked: false}]
     }
   },
   methods: {
@@ -56,6 +52,13 @@ export default {
         return o.checked
       }).length
       return n ? num > n : num
+    },
+    checkP: function (p) {
+      this.items = this.items.map(function (o) {
+        o.checked = false
+        if (o.p && o.p.indexOf(p) > -1) o.checked = true
+        return o
+      })
     }
   }
 }
