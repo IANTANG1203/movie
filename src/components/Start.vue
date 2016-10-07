@@ -1,13 +1,14 @@
 <template lang="jade">
   .hello
     h1 {{ msg }}
-    p(v-for="(m, $idx) in ms", v-if="p==$idx") {{m}}
+    p(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
       span(v-for="(t, $index) in ['自訂', '起始組合', '工程師', '設計師']")
-        input(type="radio", name="p", :value="$index", v-model="p", @change="checkP(p)")
+        input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p)")
         | {{t}}
     .ui.list
-      .item(v-for="i in items", :class="{active: i.checked}") 
+      .item(v-for="(i, $idx) in items", :class="{active: i.checked}")
+        .ui.divider(v-if="$idx % 5 == 0") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
           i.chevron.right.icon(v-show="i.checked")
@@ -23,30 +24,11 @@
 
 <script>
 export default {
+  props: ['items', 'p'],
   data () {
     return {
-      p: 0,
       msg: '今天你要學什麼？',
-      ms: ['需要html+css+js的先備知識', '需要html+css+js的先備知識', '需要進階的js知識', '需要進階的css知識'],
-      items: [
-      {t: '命令列工具CLI', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
-      {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
-      {t: '部件化', p: '1', checked: false, h: 'https://vuejs.org/guide/components.html'},
-      {t: '路由', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
-      {t: '資料綁定', p: '13', checked: false, h: 'https://vuejs.org/guide/syntax.html'},
-      {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
-      {t: '跨部件溝通', p: '2', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
-      {t: '狀態處理', p: '2', checked: false, h: 'https://vuex.vuejs.org/en/intro.html'},
-      {t: '與github-page協同', p: '12', checked: false},
-      {t: 'Chrome開發套件', p: '23', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
-      {t: 'http請求', p: '2', checked: false, h: 'https://github.com/vuejs/vue-resource'},
-      {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
-      {t: '安裝其他函式庫', p: '23', checked: false},
-      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
-      {t: '自訂水管算符', p: '4', checked: false},
-      {t: '自訂指示物', p: '4', checked: false},
-      {t: '自訂部件混入子', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
-      {t: '自訂模組', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'}]
+      ms: ['需要html+css+js的先備知識', '需要html+css+js的先備知識', '需要進階的js知識', '需要進階的css知識']
     }
   },
   methods: {
@@ -79,6 +61,7 @@ h1 {
 
 .list {
   width: 50%;
+  min-width: 300px;
   font-size: 1rem;
   text-align: left;
   margin-left: auto;
@@ -102,6 +85,7 @@ h1 {
 
 .right.bar {
   position: fixed;
+    z-index: 9998;
   top: 50px;
   right: 0;
   bottom: 0;
@@ -113,7 +97,7 @@ h1 {
   background-image: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
   .door {
     position: fixed;
-    z-index: 1;
+    z-index: 9999;
     top: 50px;
     background-color: white;
     width: 100%;    
