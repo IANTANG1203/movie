@@ -14,8 +14,7 @@
         | 特色是學習曲線平緩，可以快速上手，並保有將作品放大規模的潛能。
         br
         br
-        | 詳見：
-        a(href="https://vuejs.org/guide/", target="_blank") Vue官網
+        router-link(to="/start") 立即上手吧
 
 </template>
 

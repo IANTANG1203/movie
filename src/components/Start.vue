@@ -7,7 +7,7 @@
       | javascript
       | 的知識就行了
     p.choice
-      span(v-for="(t, $index) in ['自訂', '起始', '工程', '設計']")
+      span(v-for="(t, $index) in ['自訂', '起始組合', '工程師', '設計師']")
         input(type="radio", name="p", :value="$index", v-model="p", @change="checkP(p)")
         | {{t}}
     .ui.list
