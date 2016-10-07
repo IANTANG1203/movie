@@ -5,7 +5,7 @@
         <img src="./assets/logo.png" class="small">
       </router-link>
       <router-link to="/start" class="item" :class="{active: $route.path=='/start'}">一日上手</router-link>
-      <div class="ui simple dropdown item" :class="{active: $route.path!=='/' && $route.path!=='/start'}">
+      <div class="ui simple dropdown item">
         延伸學習
         <i class="dropdown icon"></i>
         <div class="menu">
@@ -33,7 +33,7 @@ export default {
       items: [
       {t: '命令列工具(CLI)', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
       {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
-      {t: '部件(Components)', p: '1', checked: false, h: 'https://vuejs.org/guide/components.html'},
+      {t: '部件(Components)', p: '13', checked: false, h: 'https://vuejs.org/guide/components.html'},
       {t: '不換頁的路由(Routing)', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
       {t: '資料綁定', p: '13', checked: false, h: 'https://vuejs.org/guide/syntax.html'},
       {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
@@ -45,7 +45,7 @@ export default {
       {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
       {t: '安裝其他函式庫', p: '23', checked: false},
       {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
-      {t: '自訂水管算符', p: '4', checked: false},
+      {t: '自訂水管算符', p: '34', checked: false},
       {t: '自訂指示物', p: '4', checked: false},
       {t: '自訂部件混入子', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
       {t: '自訂模組', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'}]
@@ -99,5 +99,9 @@ body {
   z-index: 999;
   top:0;
   left:0;
+}
+
+.gray {
+  color: gray;
 }
 </style>
