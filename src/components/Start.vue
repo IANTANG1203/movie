@@ -14,6 +14,10 @@
     .ui.divider
     p(:class="{red:countAll(8)}") 預計{{countAll()}}小時
       span(v-if="countAll(8)")!(超過一天了)
+    .right.bar
+      .door(:style="{bottom:countAll()*10+'%'}")
+
+
 </template>
 
 <script>
@@ -50,7 +54,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
 h1 {
   color: #42b983;
 }
@@ -69,11 +73,11 @@ h1 {
 
 .list .item:not(.active) {
   color: gray;
+  a {
+    color: #aca !important;
+  }
 }
 
-.list .item:not(.active) a {
-  color: #aca !important;
-}
 .list .item.active a {
   text-decoration: underline !important;
 }
@@ -81,4 +85,26 @@ h1 {
 .list .item input{
   margin-right: 5px;
 }
+
+.right.bar {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: green;
+  background-image: linear-gradient(red, yellow, green);
+  background-image: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
+  background-image: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
+  background-image: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+  .door {
+    position: fixed;
+    z-index: 1;
+    top: 50px;
+    background-color: white;
+    width: 100%;    
+  }
+}
+
+
 </style>
