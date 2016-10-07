@@ -1,11 +1,7 @@
 <template lang="jade">
   .hello
     h1 {{ msg }}
-    p 你只需要先備
-      | html +
-      | css +
-      | javascript
-      | 的知識就行了
+    p(v-for="(m, $idx) in ms", v-if="p==$idx") {{m}}
     p.choice
       span(v-for="(t, $index) in ['自訂', '起始組合', '工程師', '設計師']")
         input(type="radio", name="p", :value="$index", v-model="p", @change="checkP(p)")
@@ -30,7 +26,8 @@ export default {
   data () {
     return {
       p: 0,
-      msg: '那就來開始吧！',
+      msg: '今天你要學什麼？',
+      ms: ['需要html+css+js的先備知識', '需要html+css+js的先備知識', '需要進階的js知識', '需要進階的css知識'],
       items: [
       {t: '命令列工具CLI', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
       {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
@@ -42,9 +39,14 @@ export default {
       {t: '狀態處理', p: '2', checked: false, h: 'https://vuex.vuejs.org/en/intro.html'},
       {t: '與github-page協同', p: '12', checked: false},
       {t: 'Chrome開發套件', p: '23', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
+      {t: 'http請求', p: '2', checked: false, h: 'https://github.com/vuejs/vue-resource'},
+      {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
       {t: '安裝其他函式庫', p: '23', checked: false},
-      {t: '安裝Vue模組', p: '2', checked: false},
-      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}]
+      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
+      {t: '自訂水管算符', p: '4', checked: false},
+      {t: '自訂指示物', p: '4', checked: false},
+      {t: '自訂部件混入子', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
+      {t: '自訂模組', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'}]
     }
   },
   methods: {
