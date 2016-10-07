@@ -14,7 +14,7 @@
       .item(v-for="i in items", :class="{active: i.checked}") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
-          i.chevron.right.icon
+          i.chevron.right.icon(v-show="i.checked")
         span(v-else) {{i.t}}
     .ui.divider
     p(:class="{red:countAll(8)}") 預計{{countAll()}}小時
@@ -126,5 +126,9 @@ p.choice {
     position: relative;
     top: -1px;
   }
+}
+
+i.icon, i.icon::before {
+  text-decoration: none;
 }
 </style>
