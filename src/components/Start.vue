@@ -6,6 +6,15 @@
       | css +
       | javascript
       | 的知識就行了
+    p
+      input(type="radio", name="p", value="0", checked="true")
+      | 自訂
+      input(type="radio", name="p", value="1")
+      | 起始包
+      input(type="radio", name="p", value="2")
+      | 工程師
+      input(type="radio", name="p", value="3")
+      | 設計師
     .ui.list
       .item(v-for="i in items", :class="{active: i.checked}") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
@@ -26,9 +35,9 @@ export default {
     return {
       msg: '那就來開始吧！',
       items: [
-      {t: '命令列工具CLI', checked: true, h: 'https://github.com/vuejs/vue-cli'},
-      {t: '起始包', checked: true},
-      {t: '部件化', checked: true},
+      {t: '命令列工具CLI', checked: false, h: 'https://github.com/vuejs/vue-cli'},
+      {t: '初始化', checked: false},
+      {t: '部件化', checked: false},
       {t: '路由', checked: false},
       {t: '資料綁定', checked: false},
       {t: '事件與方法', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
@@ -38,8 +47,7 @@ export default {
       {t: 'Chrome開發套件', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
       {t: '安裝其他函式庫', checked: false},
       {t: '安裝Vue模組', checked: false},
-      {t: '過渡與動畫', checked: false},
-      {t: '呵呵', checked: true}]
+      {t: '過渡與動畫', checked: false}]
     }
   },
   methods: {
