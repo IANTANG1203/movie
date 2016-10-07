@@ -6,7 +6,7 @@
       | css +
       | javascript
       | 的知識就行了
-    p
+    p.choice
       span(v-for="(t, $index) in ['自訂', '起始', '工程', '設計']")
         input(type="radio", name="p", :value="$index", v-model="p", @change="checkP(p)")
         | {{t}}
@@ -31,12 +31,12 @@ export default {
       p: 0,
       msg: '那就來開始吧！',
       items: [
-      {t: '命令列工具CLI', p: '123', checked: false, h: 'https://github.com/vuejs/vue-cli'},
-      {t: '初始化', p: '123', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
-      {t: '部件化', p: '123', checked: false, h: 'https://vuejs.org/guide/components.html'},
-      {t: '路由', p: '12', checked: false, h: 'https://vuejs.org/guide/routing.html'},
-      {t: '資料綁定', p: '123', checked: false},
-      {t: '事件與方法', p: '12', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
+      {t: '命令列工具CLI', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
+      {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
+      {t: '部件化', p: '1', checked: false, h: 'https://vuejs.org/guide/components.html'},
+      {t: '路由', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
+      {t: '資料綁定', p: '13', checked: false},
+      {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
       {t: '跨部件溝通', p: '2', h: 'https://vuejs.org/guide/components.html#Passing-Data-with-Props', checked: false},
       {t: '狀態處理', p: '2', checked: false},
       {t: '與github-page協同', p: '12', checked: false},
@@ -117,5 +117,13 @@ h1 {
   }
 }
 
-
+p.choice {
+  font-size: 1rem;
+  input {
+    margin-left: 10px;
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+  }
+}
 </style>
