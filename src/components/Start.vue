@@ -51,6 +51,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
 h1 {
   color: #42b983;
 }
@@ -84,12 +85,16 @@ h1 {
 }
 
 .right.bar {
+  $w: 10px;
+  $t: 0;
   position: fixed;
     z-index: 9998;
-  top: 50px;
-  right: 0;
+  top: $t;
+  left: 0;
+  //right: 0;
   bottom: 0;
-  width: 5px;
+  width: $w;
+  border-right: 1px solid green;
   background-color: green;
   background-image: linear-gradient(red, yellow, green);
   background-image: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
@@ -98,9 +103,18 @@ h1 {
   .door {
     position: fixed;
     z-index: 9999;
-    top: 50px;
+    top: $t;
     background-color: white;
-    width: 100%;    
+    width: $w;
+    border-top: 1px solid green;
+    border-right: 1px solid green;
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+    transition: bottom 0.5s ease;
+    -webkit-transition: bottom 0.5s ease;
+    -moz-transition: bottom 0.5s ease;  
+    -o-transition: bottom 0.5s ease;      
   }
 }
 
