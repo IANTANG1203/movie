@@ -10,7 +10,7 @@
         <i class="dropdown icon"></i>
         <div class="menu">
           <router-link to="/more" class="item" :class="{active: $route.path=='/more'}">回到起點</router-link>
-          <router-link to="/baz" class="item" :class="{active: $route.path=='/baz'}">baz</router-link>
+          <router-link to="/baz" class="item" :class="{active: $route.path=='/baz'}">空</router-link>
         </div>
       </div>
     </nav>
@@ -37,15 +37,15 @@ export default {
       {t: '不換頁的路由(Routing)', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
       {t: '資料綁定', p: '13', checked: false, h: 'https://vuejs.org/guide/syntax.html'},
       {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
+      {t: '水管算符', p: '34', checked: false, h: 'http://optimizely.github.io/vuejs.org/guide/filters.html'},
       {t: '跨部件溝通', p: '2', checked: false, h: 'https://vuejs.org/guide/components.html#Composing-Components'},
-      {t: '狀態處理與追蹤', p: '2', checked: false, h: 'https://vuex.vuejs.org/en/intro.html'},
       {t: '用github-page發佈', p: '12', checked: false},
       {t: 'Chrome開發套件', p: '23', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
       {t: 'http請求', p: '2', checked: false, h: 'https://github.com/vuejs/vue-resource'},
+      {t: '狀態處理與追蹤', p: '2', checked: false, h: 'https://vuex.vuejs.org/en/intro.html'},
       {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
       {t: '安裝其他函式庫', p: '23', checked: false},
       {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
-      {t: '自訂水管算符', p: '34', checked: false},
       {t: '自訂指示物', p: '4', checked: false},
       {t: '自訂部件混入子', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
       {t: '自訂模組', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'}]

@@ -1,9 +1,9 @@
 <template lang="jade">
   .hello
     h1 {{ msg }}
-    p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
+    //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
-      span(v-for="(t, $index) in ['自訂', '起始組合', '工程師', '設計師']")
+      span(v-for="(t, $index) in ['歸零', '起始組合', '工程師', '設計師']")
         input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p)")
         | {{t}}
     .ui.list
@@ -86,6 +86,7 @@ h1 {
 
 .right.bar {
   $w: 10px;
+  $w1: 1vmax;
   $t: 0;
   position: fixed;
     z-index: 9998;
@@ -94,6 +95,7 @@ h1 {
   //right: 0;
   bottom: 0;
   width: $w;
+  width: $w1;
   border-right: 1px solid green;
   background-color: green;
   background-image: linear-gradient(red, yellow, green);
@@ -106,6 +108,7 @@ h1 {
     top: $t;
     background-color: white;
     width: $w;
+    width: $w1;
     border-top: 1px solid green;
     border-right: 1px solid green;
     border-radius: 0 0 3px 3px;
