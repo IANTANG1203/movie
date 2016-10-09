@@ -10,12 +10,14 @@ Vue.use(VueResource)
 import App from './App'
 import Home from './components/Home'
 import Start from './components/Start'
-import More from './components/More'
+import Basic from './components/Basic'
+import Community from './components/Community'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/start', component: Start },
-  { path: '/more', component: More }
+  { path: '/basic', component: Basic },
+  { path: '/community', component: Community }
 ]
 
 const router = new VueRouter({
