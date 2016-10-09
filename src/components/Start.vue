@@ -52,6 +52,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 
+@import "bourbon";
+
 h1 {
   color: #42b983;
 }
@@ -98,10 +100,7 @@ h1 {
   width: $w1;
   border-right: 1px solid green;
   background-color: green;
-  background-image: linear-gradient(red, yellow, green);
-  background-image: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
-  background-image: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
-  background-image: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+  @include background-image(linear-gradient(red, yellow, green));
   .door {
     position: fixed;
     z-index: 9999;
@@ -112,12 +111,7 @@ h1 {
     border-top: 1px solid green;
     border-right: 1px solid green;
     border-radius: 0 0 3px 3px;
-    -moz-border-radius: 0 0 3px 3px;
-    -webkit-border-radius: 0 0 3px 3px;
-    transition: bottom 0.5s ease;
-    -webkit-transition: bottom 0.5s ease;
-    -moz-transition: bottom 0.5s ease;  
-    -o-transition: bottom 0.5s ease;      
+    @include transition(bottom 0.5s ease); 
   }
 }
 
