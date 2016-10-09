@@ -46,10 +46,17 @@ export default {
       {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
       {t: '安裝函式庫', p: '23', checked: false},
       {t: '安裝語言編譯', p: '3', checked: false},
-      {t: '安裝SASS Mixins', p: '3', checked: false}, {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
-      {t: '自訂指示物', p: '4', checked: false},
-      {t: '自訂混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
-      {t: '自訂模組', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'}]
+      {t: '安裝SASS Mixins', p: '3', checked: false},
+      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
+      ],
+      advenced: [
+        {t: '自訂指示物', p: '4', checked: false},
+        {t: '自訂部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
+        {t: '自訂Vue模組(Modules)', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
+        {t: 'ECMS 2015' p: '4', checked: false},
+        {t: 'Webpack的結構' p: '4', checked: false},
+        {t: '自訂Vue的模版(Boilerplates)' p: '4', checked: false}
+      ]
     }
   }
 }

@@ -3,8 +3,7 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
-var pathToBourbon = require('node-bourbon').includePaths; //???
-console.log(pathToBourbon);
+var pathToBourbon = require('node-bourbon').includePaths //???
 
 module.exports = {
   entry: {
