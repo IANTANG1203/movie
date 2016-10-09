@@ -33,10 +33,10 @@ export default {
       items: [
       {t: '命令列工具(CLI)', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
       {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
-      {t: '部件(Components)', p: '13', checked: false, h: 'https://vuejs.org/guide/components.html'},
+      {t: '部件(Components)', p: '1', checked: false, h: 'https://vuejs.org/guide/components.html'},
       {t: '不換頁的路由(Routing)', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
       {t: '資料綁定', p: '13', checked: false, h: 'https://vuejs.org/guide/syntax.html'},
-      {t: '事件與方法', p: '12', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
+      {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
       {t: '水管算符', p: '34', checked: false, h: 'http://optimizely.github.io/vuejs.org/guide/filters.html'},
       {t: '跨部件溝通', p: '2', checked: false, h: 'https://vuejs.org/guide/components.html#Composing-Components'},
       {t: '用github-page發佈', p: '12', checked: false},
