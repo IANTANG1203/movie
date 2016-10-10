@@ -1,21 +1,22 @@
 <template>
   <div id="app">
-    <nav class="ui three item menu">
-      <router-link to="/" class="item" :class="{active: $route.path=='/'}">
+    <nav class="ui four item menu">
+      <router-link to="/" class="item" exact>
         <img src="./assets/logo.png" class="small">
       </router-link>
-      <router-link to="/start" class="item" :class="{active: $route.path=='/start'}">一日上手</router-link>
+      <router-link to="/start" class="item" exact>一日上手</router-link>
+      <router-link to="/dig" class="item">鑽研</router-link>
       <div class="ui simple dropdown item">
-        延伸學習
+        其他
         <i class="dropdown icon"></i>
         <div class="menu">
-          <router-link to="/basic" class="item" :class="{active: $route.path=='/basic'}">回到起點</router-link>
-          <router-link to="/community" class="item" :class="{active: $route.path=='/community'}">社群</router-link>
+          <router-link to="/more/basic" class="item">回到起點</router-link>
+          <router-link to="/more/community" class="item" :class="{active: $route.path=='/community'}">社群</router-link>
         </div>
       </div>
     </nav>
     <div id="main">
-      <router-view :items="items" :p="p"></router-view>
+      <router-view :items="items" :advs="advs" :p="p"></router-view>
     </div>
   </div>
 </template>
@@ -47,15 +48,15 @@ export default {
       {t: '安裝函式庫', p: '23', checked: false},
       {t: '安裝語言編譯', p: '3', checked: false},
       {t: '安裝SASS Mixins', p: '3', checked: false},
-      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'},
+      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}
       ],
-      advenced: [
-        {t: '自訂指示物', p: '4', checked: false},
+      advs: [
+        {t: 'JS 2015', p: '4', checked: false, h:'https://babeljs.io/docs/learn-es2015/'},
+        {t: 'Webpack的結構', p: '4', checked: false, h: 'http://webpack.github.io/docs/'},
         {t: '自訂部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
-        {t: '自訂Vue模組(Modules)', p: '4', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
-        {t: 'ECMS 2015' p: '4', checked: false},
-        {t: 'Webpack的結構' p: '4', checked: false},
-        {t: '自訂Vue的模版(Boilerplates)' p: '4', checked: false}
+        {t: '自訂指示物', p: '5', checked: false},
+        {t: '自訂Vue模組(Modules)', p: '5', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
+        {t: '自訂Vue的模版(Boilerplates)', p: '5', checked: false}
       ]
     }
   }
@@ -107,6 +108,9 @@ body {
   z-index: 999;
   top:0;
   left:0;
+  .router-link-active {
+    background-color: #ccf;
+  }
 }
 
 .gray {
