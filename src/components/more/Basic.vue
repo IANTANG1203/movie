@@ -1,15 +1,16 @@
 <template lang="jade">
   .hi
     h1 {{ msg }}
-    p vallinaJS
-    p jquery
-    p backbone
-    p angular 1
-    p react*
-    p riot*
-    p vue 1*
-    p angular 2
-    p vue 2
+    .ui.list
+      .item vallinaJS
+      .item jquery
+      .item backbone
+      .item angular 1
+      .item react*
+      .item riot*
+      .item vue 1*
+      .item angular 2
+      .item vue 2
 </template>
 
 <script>
