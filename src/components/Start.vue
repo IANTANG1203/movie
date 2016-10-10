@@ -24,6 +24,7 @@
 import measure from './measure'
 
 export default {
+  name: 'Start',
   props: ['items', 'p'],
   components: {
     measure

@@ -23,6 +23,7 @@
 import measure from './measure'
 
 export default {
+  name: 'Dig',
   props: ['advs', 'p'],
   components: {
     measure
