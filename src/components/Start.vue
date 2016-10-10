@@ -1,5 +1,6 @@
 <template lang="jade">
   .hello
+    measure(:list="items", :m="1")
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
@@ -16,15 +17,17 @@
     .ui.divider
     p(:class="{red:countAll(8)}") 預計{{countAll()}}小時
       span(v-if="countAll(8)")!(超過一天了)
-    .right.bar
-      .door(:style="{bottom:countAll()*10+'%'}")
-
 
 </template>
 
 <script>
+import measure from './measure'
+
 export default {
   props: ['items', 'p'],
+  components: {
+    measure
+  },
   data () {
     return {
       msg: '今天你要學什麼？',

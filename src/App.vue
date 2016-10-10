@@ -22,12 +22,7 @@
 </template>
 
 <script>
-import Home from './components/Home'
-
 export default {
-  components: {
-    Home
-  },
   data: function () {
     return {
       p: {p: 0},
@@ -51,7 +46,7 @@ export default {
       {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}
       ],
       advs: [
-        {t: 'JS 2015', p: '4', checked: false, h:'https://babeljs.io/docs/learn-es2015/'},
+        {t: 'JS 2015', p: '4', checked: false, h: 'https://babeljs.io/docs/learn-es2015/'},
         {t: 'Webpack的結構', p: '4', checked: false, h: 'http://webpack.github.io/docs/'},
         {t: '自訂部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
         {t: '自訂指示物', p: '5', checked: false},
