@@ -47,9 +47,11 @@ export default {
       ],
       advs: [
         {t: 'JS 2015', p: '4', checked: false, h: 'https://babeljs.io/docs/learn-es2015/'},
-        {t: 'Webpack的結構', p: '4', checked: false, h: 'http://webpack.github.io/docs/'},
-        {t: '自訂部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
-        {t: '自訂指示物', p: '5', checked: false},
+        {t: '自訂Vue部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
+        {t: '自訂Vue指示物', p: '4', checked: false},
+        {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/'},
+        {t: 'Webpack使用方式', p: '5', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
+        {t: 'Webpack載入子', p: '5', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
         {t: '自訂Vue模組(Modules)', p: '5', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
         {t: '自訂Vue的模版(Boilerplates)', p: '5', checked: false}
       ]
