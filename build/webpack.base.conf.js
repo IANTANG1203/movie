@@ -47,6 +47,9 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue'
       },
+      { test: /\.ls$/,
+        loader: "vue-livescript-loader"
+      },
       {
         test: /\.js$/,
         loader: 'babel',
