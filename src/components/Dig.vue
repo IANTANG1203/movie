@@ -1,6 +1,6 @@
 <template lang="jade">
   .hello
-    measure(:list="advs", :m="2")
+    measure(:list="advs", :m="1.2")
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
