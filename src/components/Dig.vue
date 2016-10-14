@@ -35,10 +35,10 @@ export default {
     }
   },
   methods: {
-    countDbl: function (n) {
+    countDbl: function (n, m) {
       var num = this.advs.filter(function (o) {
         return o.checked
-      }).length * 2
+      }).length * 1.2
       return n ? num > n : num
     },
     checkP: function (p) {
