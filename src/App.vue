@@ -11,6 +11,13 @@
         router-link.item(to='/dig') 鑽研
         router-link.item(to='/more/basic') 從頭開始
         router-link.item(to='/more/community') 社群
+        .divider
+        a.item(href='https://github.com/bestian/start-vue', target="_blank") 
+          | 專案
+          i.github.icon        
+        a.item(href='https://github.com/bestian/start-vue/issues', target="_blank") 
+          | 錯誤回報
+          i.github.icon
   #main
     transition(name='fade', mode='out-in')
       router-view(:items='items', :advs='advs', :p='p')

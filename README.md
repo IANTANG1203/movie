@@ -1,6 +1,15 @@
 # start-vue
 
-> A Vue.js project
+> 一個用Vue介紹Vue的小作品
+
+## 錯誤回報
+
+請至[議題區/Issue](https://github.com/bestian/start-vue/issues)
+
+## 改良
+
+歡迎Fork本專案，自行改良
+
 
 ## Build Setup
 
