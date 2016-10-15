@@ -7,6 +7,9 @@
       span(v-for="(t, $index) in ['歸零', '起始組合', '工程師', '設計師']")
         input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p)")
         | {{t}}
+      span
+        | &nbsp;&nbsp;&nbsp;          
+        router-link(to='/dig') 更深...
     .ui.list
       .item(v-for="(i, $idx) in items", :class="{active: i.checked}")
         .ui.divider(v-if="$idx % 5 == 0") 

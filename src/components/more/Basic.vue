@@ -3,13 +3,13 @@
     h1 {{ msg }}
     
     h3.ui.dividing.header
-    .ui.list
+    .ui.bulleted.list
       .item VallinaJS: 基本的JS
       .item commonJS: 需求(Require)
       .item ES2015: 導入/導出
 
     h3.ui.dividing.header
-    .ui.list
+    .ui.bulleted.list
       .item JQuery: 包裝(Wrapping) 
       .item Angular1: 資料綁定(Data-Binding)、表達式(Expressions)、指示物(Directives)...
       .item React + JSX: 虛擬DOM(virture DOM)、部件(Component)
@@ -38,7 +38,7 @@ h1, h3 {
   color: $c;
 }
 
-.list {
+.ui.bulleted.list {
   width: 50%;
   min-width: 300px;
   font-size: 0.75rem;

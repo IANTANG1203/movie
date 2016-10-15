@@ -32,7 +32,7 @@ export default {
   },
   data () {
     return {
-      msg: '今天你要學什麼？',
+      msg: '今天你要鑽研什麼？',
       ms: ['需要html+css+js的先備知識', '需要html+css+js的先備知識', '需要進階的js知識', '需要進階的css知識']
     }
   },

@@ -1,24 +1,20 @@
-<template>
-  <div id="app">
-    <nav class="ui four item menu">
-      <router-link to="/" class="item" exact>
-        <img src="./assets/logo.png" class="small">
-      </router-link>
-      <router-link to="/start" class="item" exact>一日上手</router-link>
-      <div class="ui simple dropdown item">
-        其他
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <router-link to="/dig" class="item">鑽研</router-link>
-          <router-link to="/more/basic" class="item">從頭開始</router-link>
-          <router-link to="/more/community" class="item">社群</router-link>
-        </div>
-      </div>
-    </nav>
-    <div id="main">
-      <router-view :items="items" :advs="advs" :p="p"></router-view>
-    </div>
-  </div>
+<template lang="jade">
+#app
+  nav.ui.four.item.menu
+    router-link.item(to='/', exact='')
+      img.small(src='./assets/logo.png')
+    router-link.item(to='/start', exact='') 一日上手
+    .ui.simple.dropdown.item
+      | 其他
+      i.dropdown.icon
+      .menu
+        router-link.item(to='/dig') 鑽研
+        router-link.item(to='/more/basic') 從頭開始
+        router-link.item(to='/more/community') 社群
+  #main
+    transition(name='fade', mode='out-in')
+      router-view(:items='items', :advs='advs', :p='p')
+
 </template>
 
 <script>
@@ -61,6 +57,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+@import 'bourbon';
+
 html {
   height: 100%;
   font-size: 18px;
@@ -105,8 +104,11 @@ body {
   z-index: 999;
   top:0;
   left:0;
-  .router-link-active {
-    background-color: #ccf !important;
+  a {
+    @include transition(all 0.5s ease);
+    &.router-link-active {
+      background-color: #ccf !important;
+    }
   }
 }
 
@@ -114,4 +116,14 @@ body {
   color: gray;
   font-size: 0.618em;
 }
+
+
+.fade-enter-active, .fade-leave-active {
+  @include transition(opacity .5s ease-in);
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
 </style>
