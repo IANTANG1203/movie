@@ -5,13 +5,13 @@
         <img src="./assets/logo.png" class="small">
       </router-link>
       <router-link to="/start" class="item" exact>一日上手</router-link>
-      <router-link to="/dig" class="item">鑽研</router-link>
       <div class="ui simple dropdown item">
         其他
         <i class="dropdown icon"></i>
         <div class="menu">
-          <router-link to="/more/basic" class="item">回到起點</router-link>
-          <router-link to="/more/community" class="item" :class="{active: $route.path=='/community'}">社群</router-link>
+          <router-link to="/dig" class="item">鑽研</router-link>
+          <router-link to="/more/basic" class="item">從頭開始</router-link>
+          <router-link to="/more/community" class="item">社群</router-link>
         </div>
       </div>
     </nav>
@@ -49,7 +49,7 @@ export default {
         {t: 'JS 2015', p: '4', checked: false, h: 'https://babeljs.io/docs/learn-es2015/'},
         {t: '自訂Vue部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
         {t: '自訂Vue指示物', p: '4', checked: false},
-        {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/'},
+        {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/', note: 'v1.x和v2.x的語法有不同'},
         {t: 'Webpack使用方式', p: '5', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
         {t: 'Webpack載入子', p: '5', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
         {t: '自訂Vue模組(Modules)', p: '5', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
@@ -106,11 +106,12 @@ body {
   top:0;
   left:0;
   .router-link-active {
-    background-color: #ccf;
+    background-color: #ccf !important;
   }
 }
 
 .gray {
   color: gray;
+  font-size: 0.618em;
 }
 </style>

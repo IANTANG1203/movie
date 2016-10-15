@@ -1,6 +1,6 @@
 <template lang="jade">
   .hello
-    measure(:list="advs", :m="1.2")
+    measure(:list="advs", :m="1")
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
@@ -12,8 +12,10 @@
         .ui.divider(v-if="$idx % 5 == 0") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
+          span.gray(v-if="i.note") &nbsp;({{i.note}})
           i.chevron.right.icon(v-show="i.checked")
         span(v-else) {{i.t}}
+          span.gray(v-if="i.note") &nbsp;({{i.note}})
     .ui.divider
     p(:class="{red:countDbl(8)}") 預計{{countDbl()}}小時
       span(v-if="countDbl(8)")!(超過一天了)
@@ -38,7 +40,7 @@ export default {
     countDbl: function (n, m) {
       var num = this.advs.filter(function (o) {
         return o.checked
-      }).length * 1.2
+      }).length * 1
       return n ? num > n : num
     },
     checkP: function (p) {

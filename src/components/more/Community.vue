@@ -1,13 +1,11 @@
 <template lang="jade">
   .hi
     h1 {{ msg }}
-    .ui.divider
-    h3 人
-    p vueJS
-    p vue台灣
-    .ui.divider
-    h3 模組
-    p awasome-vue
+    h3.ui.dividing.header 國際社群
+    a(href='https://vuejs.org/guide/join.html', target="_blank") Vue Community
+
+    h3.ui.dividing.header 台灣社群
+    a(href='https://www.facebook.com/groups/vuejs.tw/?fref=ts', target="_blank") Vue.js 台灣
 </template>
 
 <script>
