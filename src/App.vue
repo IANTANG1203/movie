@@ -12,8 +12,9 @@
         router-link.item(to='/more/basic') 從頭開始
         router-link.item(to='/more/community') 社群
         .divider
+        .gray.header 關於本站
         a.item(href='https://github.com/bestian/start-vue', target="_blank") 
-          | 專案
+          | 專案頁
           i.github.icon        
         a.item(href='https://github.com/bestian/start-vue/issues', target="_blank") 
           | 錯誤回報
@@ -120,8 +121,12 @@ body {
   }
 }
 
+.ui.simple.dropdown .menu {
+  @include transition(opacity 1s ease);
+}
+
 .gray {
-  color: gray;
+  color: gray !important;
   font-size: 0.618em;
 }
 
