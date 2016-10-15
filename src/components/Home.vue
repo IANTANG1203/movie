@@ -7,11 +7,19 @@
 
     .ui.segment
       p
-        | 一個前端MVVM框架，
+        | 部件化的前端框架
         br
-        | 結合了部份Angular的寫法和類似React的虛擬DOM引擎，
+        | 結合了
+        br 
+        | Angular的寫法 + React的引擎
         br
-        | 特色是學習曲線平緩，可以快速上手，並保有將作品放大規模的潛能。
+        br
+        | 學習曲線平緩
+        | 可快速上手，並保有將作品放大規模的潛能
+        br
+        br
+        | 相容: JSX、TypeScript語言
+        | 與Webpack環境
         br
         br
         router-link(to="/start") 瞭解更多
@@ -32,5 +40,8 @@ export default {
 <style scoped>
 h1 {
   color: #42b983;
+}
+p {
+  font-size: 0.8rem;
 }
 </style>
