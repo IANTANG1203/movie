@@ -83,6 +83,10 @@ body {
   height: 100%;
 }
 
+.ui.container {
+  max-width: 600px !important;
+}
+
 #app {
   color: #2c3e50;
   max-width: 600px;
