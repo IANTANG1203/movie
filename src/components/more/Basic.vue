@@ -32,9 +32,11 @@
 
         p 不同框架有不同的規格，背後的引擎不同，表面上設計師寫的語法也很不一樣。一個寫慣Backbone(2010~)的設計師可能對Ember(2011~)很陌生，反之亦然。
 
-        p 框架如Angular(2009~)、Knockout(2010~)、Meteor(2012~)、Polymer(2013~)被研發出了，各有特色。
+        p 框架很多樣，有前端框架如Angular(2009~)、Knockout(2010~)、Polymer(2013~)；後端框架如Django(2005~)、Ruby On Rails(2005)、Sails(2012)、Meteor(2012~)等等，各有範圍與特色。
 
-        p 其中Angular這個框架一度造成震撼性的效果。因其資料綁定、相依性嵌入等特性，讓書寫方便的同時，也讓建立與分享模組很方便。
+        p 因應手機的普及，也有如PhoneGap、jQuery Mobile、Cordova和Ionic這些工具出現。
+
+        p 其中，Angular這個框架一度造成震撼性的效果。因其資料綁定、相依性嵌入等特性，讓書寫方便的同時，也讓建立與分享模組很方便。
 
         p 大量的Angular模組被研發出來，在
           a(href="http://ngmodules.org/") ngmodules.org/
