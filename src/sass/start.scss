@@ -1,6 +1,11 @@
 
 @import "bourbon";
 
+.start {
+  position: relative;
+  z-index: 1;
+}
+
 h1 {
   color: #42b983;
 }

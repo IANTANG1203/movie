@@ -1,5 +1,5 @@
 <template lang="jade">
-  .hello
+  .start
     measure(:list="items", :m="1")
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
