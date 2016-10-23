@@ -67,8 +67,14 @@ export default {
         {t: '自訂Vue的模版(Boilerplates)', p: '5', checked: false}
       ]
     }
+  },
+  methods: {
+    start: () => {
+      window.alert('aaa')
+    }
   }
 }
+
 </script>
 
 <style lang="scss">
