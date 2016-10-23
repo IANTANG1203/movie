@@ -1,5 +1,6 @@
 <template lang="jade">
 #app
+  sin
   nav.ui.four.item.menu
     router-link.item(to='/', exact='')
       img.small(src='./assets/logo.png')
@@ -26,7 +27,12 @@
 </template>
 
 <script>
+import sin from './components/sin'
+
 export default {
+  components: {
+    sin
+  },
   data: function () {
     return {
       p: {p: 0},
