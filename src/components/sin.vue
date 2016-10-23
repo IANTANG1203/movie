@@ -1,22 +1,36 @@
 <template>
   <sin>
-    <div class="dot" v-for="r in range" 
-      :style="{top: 50+Math.sin(r*3.14/50)*47+'vh', left:r+'%'}"
-      v-if="r < 33 || r > 66">
+    <div class="rhyme" v-for="r in range" v-if="r < 66 || r > 134">
+      <div class="dot" 
+        :style="{top: 50+Math.sin(r*3.14/200*2)*55+'vh',
+                 left:r/2+'%',
+                 color: color}">
+      <div class="dot" 
+        :style="{top: 50-Math.sin(r*3.14/200*2)*55+'vh',
+                 left:r/2+'%',
+                 color: color}">
+      </div>
     </div>
   </sin>
 </template>
 
 <script>
 export default {
-  props: ['m', 'list'],
+  props: [
+    {
+      name: 'color',
+      type: String,
+      required: false
+    }
+  ],
   data () {
     var rg = []
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 200; i++) {
       rg.push(i)
     }
     return {
-      range: rg
+      range: rg,
+      color: 'green'
     }
   },
   methods: {
@@ -29,14 +43,16 @@ export default {
 
 @import "bourbon";
 
-
+.rhyme {
+  position: relative;
+  z-index: 1;
+}
 .dot {
   display: block;
   position: fixed;
-  z-index: 99999;
   width: 2px;
-  height: 2px;
-  border: 1px solid green;
+  height: 4px;
+  border: 1px solid;
 }
 
 </style>
