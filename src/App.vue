@@ -61,6 +61,7 @@ export default {
         {t: '自訂Vue部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
         {t: '自訂Vue指示物', p: '4', checked: false},
         {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/', note: 'v1.x和v2.x的語法有不同'},
+        {t: '程式啟動路由', p: '4', checked: false, h: 'http://router.vuejs.org/en/essentials/navigation.html', note: '.vue部件時要以this.$router來抓到router'},
         {t: '串列漸變', p: '5', checked: false, h: 'https://vuejs.org/guide/transitions.html#List-Transitions'},
         {t: 'Webpack使用方式', p: '6', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
         {t: 'Webpack載入子', p: '6', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
