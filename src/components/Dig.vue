@@ -4,7 +4,7 @@
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
-      span(v-for="(t, $index) in ['工程師','黑客']")
+      span(v-for="(t, $index) in ['工程師','設計師','黑客']")
         input(type="radio", name="p", :value="$index+4", v-model="p.p", @change="checkP(p.p)")
         | {{t}}
     .ui.list

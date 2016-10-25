@@ -54,17 +54,18 @@ export default {
       {t: '安裝函式庫', p: '23', checked: false},
       {t: '安裝語言編譯', p: '3', checked: false},
       {t: '安裝SASS Mixins', p: '3', checked: false},
-      {t: '過渡效果與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}
+      {t: '漸變與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}
       ],
       advs: [
         {t: 'JS 2015', p: '4', checked: false, h: 'https://babeljs.io/docs/learn-es2015/'},
         {t: '自訂Vue部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
         {t: '自訂Vue指示物', p: '4', checked: false},
         {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/', note: 'v1.x和v2.x的語法有不同'},
-        {t: 'Webpack使用方式', p: '5', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
-        {t: 'Webpack載入子', p: '5', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
-        {t: '自訂Vue模組(Modules)', p: '5', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
-        {t: '自訂Vue的模版(Boilerplates)', p: '5', checked: false}
+        {t: '串列漸變', p: '5', checked: false, h: 'https://vuejs.org/guide/transitions.html#List-Transitions'},
+        {t: 'Webpack使用方式', p: '6', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
+        {t: 'Webpack載入子', p: '6', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
+        {t: '自訂Vue模組(Modules)', p: '6', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
+        {t: '自訂Vue的模版(Boilerplates)', p: '6', checked: false}
       ]
     }
   },
