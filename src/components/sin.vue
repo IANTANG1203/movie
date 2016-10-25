@@ -1,5 +1,5 @@
 <template>
-  <sin>
+  <div>
     <div class="rhyme" v-for="r in range" v-if="r < 70 || r > 130"> 
       <div class="dot" 
         :style="{top: 50+Math.sin(r*3.14/200*2)*55+'vh',
@@ -13,26 +13,26 @@
                  'z-index': countZ(r, 1)}">_
       </div>
     </div>
-  </sin>
+  </div>
 </template>
 
 <script>
 export default {
-  props: [
-    {
-      name: 'color',
+  props: {
+    color: {
       type: String,
-      required: false
+      required: false,
+      defalt: 'green'
     }
-  ],
+  },
   data () {
     var rg = []
     for (var i = 0; i < 200; i++) {
       rg.push(i)
     }
     return {
-      range: rg,
-      color: 'green'
+      range: rg// ,
+//      color: 'green'
     }
   },
   methods: {
@@ -58,6 +58,7 @@ export default {
   width: 2px;
   height: 4px;
   border: 1px solid;
+  font-size: 9px;
 }
 
 </style>

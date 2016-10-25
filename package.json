@@ -15,7 +15,7 @@
   "dependencies": {
     "compass-mixins": "^0.12.10",
     "vue": "^2.0.1",    
-    "vue-router": "^2.0.0",
+    "vue-router": "^2.0.1",
     "vuex": "^2.0.0"
   },
   "devDependencies": {

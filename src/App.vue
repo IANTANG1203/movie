@@ -69,8 +69,8 @@ export default {
     }
   },
   methods: {
-    start: () => {
-      window.alert('aaa')
+    test: function () {
+      this.$router.push('/dig')
     }
   }
 }
