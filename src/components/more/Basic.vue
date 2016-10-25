@@ -36,6 +36,8 @@
 
         p 因應手機的普及，也有如PhoneGap、jQuery Mobile、Cordova和Ionic這些工具出現。
 
+        .ui.divider
+
         p 其中，Angular這個框架一度造成震撼性的效果。因其資料綁定、相依性嵌入等特性，讓書寫方便的同時，也讓建立與分享模組很方便。
 
         p 大量的Angular模組被研發出來，在
@@ -48,13 +50,18 @@
 
         p 不過，Angular的語法是很特出的創舉。它看起來就像把書寫HTML的過程變得更豐富，而不是要重新學習許多新的語法與字句。
 
+        .ui.divider
 
-        p react...
+        p 隨後，
+          a(href = "https://facebook.github.io/react/") React
+          | 開啟了使用虛擬DOM以提高執行效能的時代，隨後其他的框架也陸續使用虛擬DOM引擎，Vue也不例外。畢竟JS運算比瀏覽器的DOM插拔來得快多了。
 
-        p commonJS + nodeJS...
+        p
+          | 除了虛擬DOM，網路部件化的流行，也和React有關，在之後的Angular2與Vue，都採取網路部件化的結構。Angular2放棄了Angular1的控制器(controller)與範圍(scope)，改以部件(component)為單位。
 
+        p
+          | 部件的特色在於完整的template, data, methods與scoped css...
 
-        p ...
 
       h3.ui.dividing.header 語言
       .ui.bulleted.list
