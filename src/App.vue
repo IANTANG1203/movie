@@ -148,12 +148,22 @@ body {
 }
 
 
-.fade-enter-active, .fade-leave-active {
-  @include transition(opacity .5s ease-in);
+.fade-enter-active {
+  @include transition(all .5s ease-in);
 }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-enter {
+  opacity: 0;
+  @include transform(rotateY(90deg));
 }
+
+.fade-leave { 
+}
+
+.fade-leave-active {
+  @include transition(all .5s ease);
+  opacity: 0;
+}
+
 
 </style>
