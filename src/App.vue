@@ -129,6 +129,7 @@ body {
 #app nav {
   position: fixed;
   z-index: 5;
+  margin: 0;
   top:0;
   left:0;
   a {

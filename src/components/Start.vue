@@ -19,7 +19,7 @@
         span(v-else) {{i.t}}
     .ui.divider
     p(:class="{red:countAll(8)}") 預計{{countAll()}}小時
-      span(v-if="countAll(8)")!(超過一天了)
+      span(v-if="countAll(8)") !(超過一天了)
 
 </template>
 

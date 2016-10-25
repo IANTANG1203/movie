@@ -53,33 +53,20 @@
         .ui.divider
 
         p 隨後，
-          a(href = "https://facebook.github.io/react/") React
+          a(href = "https://facebook.github.io/react/") React(2013~)
           | 開啟了使用虛擬DOM以提高執行效能的時代，隨後其他的框架也陸續使用虛擬DOM引擎，Vue也不例外。畢竟JS運算比瀏覽器的DOM插拔來得快多了。
 
         p
-          | 除了虛擬DOM，網路部件化的流行，也和React有關，在之後的Angular2與Vue，都採取網路部件化的結構。Angular2放棄了Angular1的控制器(controller)與範圍(scope)，改以部件(component)為單位。
+          | 除了虛擬DOM，網路部件化的流行，也和React有關，在之後的Angular2與Vue，都採取網路部件化的結構。
+          a(href = "https://angular.io/") Angular2(2014~)
+          | 放棄了Angular1的控制器(controller)與範圍(scope)，改以部件(component)為單位。
 
         p
-          | 部件的特色在於完整的template, data, methods與scoped css...
+          | 部件的特色在於各部件都可以有完整的模板(template)、資料(data)、 方法(methods)與限定範圍的樣式(scoped css)。部件之間可以形成樹狀結構，也可以彼此溝通。
 
-
-      h3.ui.dividing.header 語言
-      .ui.bulleted.list
-        .item VallinaJS: 基本的JS
-        .item commonJS: 需求(Require)
-        .item nodeJS: npm, 大量模組
-        .item ES2015: 導入/導出(import/export)
-        .item JSX: 將HTML語法引入JS
-        .item Typescript: 型別確認(Type Checking)
-
-      h3.ui.dividing.header 函式庫與框架
-      .ui.bulleted.list
-        .item JQuery: 包裝(Wrapping) 
-        .item Angular1: 資料綁定(Data-Binding)、表達式(Expressions)、指示物(Directives)...
-        .item React + JSX: 虛擬DOM(virture DOM)、部件(Component)
-        .item Webpack: 打包(Bundling)
-        .item Angular2 + Typescript: 影子DOM(Shadow DOM)、型別確認(Type Checking)
-        .item Vue2: 可以相容以上各部份
+        p
+          | 透過部件相互組織而成的結構，設計師比以往更容易落實「關注點分離」，每次只改要改的部份，不必擔心牽一髮動全身。
+          
 </template>
 
 <script>

@@ -18,7 +18,7 @@
           span.gray(v-if="i.note") &nbsp;({{i.note}})
     .ui.divider
     p(:class="{red:countDbl(8)}") 預計{{countDbl()}}小時
-      span(v-if="countDbl(8)")!(超過一天了)
+      span(v-if="countDbl(8)") !(超過一天了)
 </template>
 
 <script>
