@@ -62,6 +62,7 @@ export default {
         {t: '自訂Vue指示物', p: '4', checked: false},
         {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/', note: 'v1.x和v2.x的語法有不同'},
         {t: '程式啟動路由', p: '4', checked: false, h: 'http://router.vuejs.org/en/essentials/navigation.html', note: '.vue部件時要以this.$router來抓到router'},
+        {t: '部件包裝器', p: '4', checked: false, h: 'http://012.vuejs.org/guide/components.html#Single_Insertion_Point'},
         {t: '串列漸變', p: '5', checked: false, h: 'https://vuejs.org/guide/transitions.html#List-Transitions'},
         {t: 'Webpack使用方式', p: '6', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
         {t: 'Webpack載入子', p: '6', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
@@ -150,22 +151,24 @@ body {
 }
 
 
+.fade-leave {  }
+
+.fade-leave-active {
+  @include transition(all .3s ease);
+  opacity: 0;
+}
+
+
+.fade-enter {
+  opacity: 0;
+  @include transform(rotateY(45deg));
+}
+
+
 .fade-enter-active {
   @include transition(all .5s ease-in);
 }
 
-.fade-enter {
-  opacity: 0;
-  @include transform(rotateY(90deg));
-}
-
-.fade-leave { 
-}
-
-.fade-leave-active {
-  @include transition(all .5s ease);
-  opacity: 0;
-}
 
 
 </style>
