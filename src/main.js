@@ -1,29 +1,23 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-
-import VueRouter from 'vue-router'
+import App from './App'
+import router from './router'
+import store from './store' // vuex store instance
+import { sync } from 'vuex-router-sync'
 import VueResource from 'vue-resource'
-Vue.use(VueRouter)
+import * as filters from './filters'
+
+// use http
 Vue.use(VueResource)
 
-import App from './App'
-import Home from './components/Home'
-import Start from './components/Start'
-import Dig from './components/Dig'
-import Basic from './components/more/Basic'
-import Community from './components/more/Community'
+// sync the router with the vuex store.
+// this registers `store.state.route`
+sync(store, router)
 
-const routes = [
-  { path: '/', component: Home },
-  { path: '/start', component: Start },
-  { path: '/dig', component: Dig },
-  { path: '/more/basic', component: Basic },
-  { path: '/more/community', component: Community }
-]
-
-const router = new VueRouter({
-  routes
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
 
 /* eslint-disable no-new */
