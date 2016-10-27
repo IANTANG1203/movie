@@ -90,3 +90,23 @@ i.chevron.right.icon {
   50% {position: relative; left: 0.25em}
   100% {position: relative; left: 0}
 }
+
+
+
+.list-leave {
+}
+.list-leave-active {
+  margin: 0;
+  height: 0;
+  @include transform(translateX(50vw) rotateX(90deg));
+  @include transition(all 1s);
+}
+
+.list-enter {
+  opacity: 0;  
+  @include transform(translateY(30px) rotateX(90deg));
+}
+
+.list-enter-active {
+  @include transition(all .5s);
+}

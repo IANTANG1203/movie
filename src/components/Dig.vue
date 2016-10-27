@@ -4,11 +4,11 @@
     h1 {{ msg }}
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
-      span(v-for="(t, $index) in ['工程師','設計師','黑客']")
-        input(type="radio", name="p", :value="$index+4", v-model="p.p", @change="checkP(p.p)")
+      span(v-for="(t, $index) in ['歸零','','','','工程師','設計師','黑客']", v-if ="t")
+        input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p)")
         | {{t}}
-    .ui.list
-      .item(v-for="(i, $idx) in advs", :class="{active: i.checked}")
+    transition-group.ui.list(name="list", tag = "div")
+      span.item(v-for="(i, $idx) in checkedFirst(advs)", :key="i.t", :class="{active: i.checked}")
         .ui.divider(v-if="$idx % 5 == 0") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
@@ -26,7 +26,7 @@ import measure from './measure'
 
 export default {
   name: 'Dig',
-  props: ['advs', 'p'],
+  props: ['advs', 'p', 'checkedFirst'],
   components: {
     measure
   },

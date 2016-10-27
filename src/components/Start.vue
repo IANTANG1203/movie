@@ -10,8 +10,8 @@
       span
         | &nbsp;&nbsp;&nbsp;          
         router-link(to='/dig') 更深...
-    .ui.list
-      .item(v-for="(i, $idx) in items", :class="{active: i.checked}")
+    transition-group.ui.list(name="list", tag = "div")
+      span.item(v-for="(i, $idx) in checkedFirst(items)", :key="i.t", :class="{active: i.checked}")
         .ui.divider(v-if="$idx % 5 == 0") 
         input.ui.checkbox(type="checkbox", v-model="i.checked")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
@@ -28,7 +28,7 @@ import measure from './measure'
 
 export default {
   name: 'Start',
-  props: ['items', 'p'],
+  props: ['items', 'p', 'checkedFirst'],
   components: {
     measure
   },
