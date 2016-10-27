@@ -4,7 +4,11 @@
       h1 {{ msg }}
       h3.ui.dividing.header 國際社群
       .ui.bulleted.list
-        a.item(href='https://vuejs.org/guide/join.html', target="_blank") Vue Community
+        a.item(href='https://vuejs.org/guide/join.html', target="_blank") 社群總匯(Vue Community)
+        a.item(href='http://forum.vuejs.org/', target="_blank") 論壇問答區(Vue Forum)
+        a.item(href='https://github.com/vuejs/awesome-vue', target="_blank") 資源與插件(Awesome Vue)
+
+
 
       h3.ui.dividing.header 台灣社群
       .ui.bulleted.list

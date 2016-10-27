@@ -27,6 +27,8 @@
 
 <script>
 import sin from './components/sin'
+import items from './data/start.js'
+import advs from './data/dig.js'
 
 export default {
   components: {
@@ -35,39 +37,8 @@ export default {
   data: function () {
     return {
       p: {p: 0},
-      items: [
-      {t: '命令列工具(CLI)', p: '1', checked: false, h: 'https://github.com/vuejs/vue-cli'},
-      {t: '初始化', p: '1', checked: false, h: 'https://vuejs.org/guide/installation.html#CLI'},
-      {t: '部件(Components)', p: '1', checked: false, h: 'https://vuejs.org/guide/components.html'},
-      {t: '不換頁的路由(Routing)', p: '1', checked: false, h: 'https://vuejs.org/guide/routing.html'},
-      {t: '資料綁定', p: '13', checked: false, h: 'https://vuejs.org/guide/syntax.html'},
-      {t: '串列呈現', p: '1', checked: false, h: 'https://vuejs.org/guide/list.html'},
-      {t: '事件與方法', p: '123', h: 'https://vuejs.org/guide/components.html#Custom-Events', checked: false},
-      {t: '水管算符(Pipe)', p: '34', checked: false, h: 'http://optimizely.github.io/vuejs.org/guide/filters.html'},
-      {t: '跨部件溝通', p: '2', checked: false, h: 'https://vuejs.org/guide/components.html#Composing-Components'},
-      {t: '用github-page發佈', p: '12', checked: false},
-      {t: 'Chrome開發套件', p: '2', h: 'https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd', checked: false},
-      {t: '傳送http請求', p: '2', checked: false, h: 'https://github.com/vuejs/vue-resource'},
-      {t: '狀態處理與追蹤', p: '2', checked: false, h: 'https://vuex.vuejs.org/en/intro.html'},
-      {t: '安裝Vue模組', p: '23', checked: false, h: 'https://github.com/vuejs/awesome-vue#libraries--plugins'},
-      {t: '安裝函式庫', p: '23', checked: false},
-      {t: '安裝語言編譯', p: '3', checked: false},
-      {t: '安裝SASS Mixins', p: '3', checked: false},
-      {t: '漸變與動畫', p: '3', checked: false, h: 'https://vuejs.org/guide/transitions.html'}
-      ],
-      advs: [
-        {t: 'JS 2015', p: '4', checked: false, h: 'https://babeljs.io/docs/learn-es2015/'},
-        {t: '自訂Vue部件混入子(Mixins)', p: '4', checked: false, h: 'https://vuejs.org/guide/mixins.html'},
-        {t: '自訂Vue指示物', p: '4', checked: false},
-        {t: 'Webpack', p: '4', checked: false, h: 'http://webpack.github.io/docs/', note: 'v1.x和v2.x的語法有不同'},
-        {t: '程式啟動路由', p: '4', checked: false, h: 'http://router.vuejs.org/en/essentials/navigation.html', note: '.vue部件時要以this.$router來抓到router'},
-        {t: '部件包裝器', p: '4', checked: false, h: 'http://012.vuejs.org/guide/components.html#Single_Insertion_Point'},
-        {t: '串列漸變', p: '5', checked: false, h: 'https://vuejs.org/guide/transitions.html#List-Transitions'},
-        {t: 'Webpack使用方式', p: '6', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
-        {t: 'Webpack載入子', p: '6', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
-        {t: '自訂Vue模組(Modules)', p: '6', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
-        {t: '自訂Vue的模版(Boilerplates)', p: '6', checked: false}
-      ]
+      items: items,
+      advs: advs
     }
   },
   methods: {
