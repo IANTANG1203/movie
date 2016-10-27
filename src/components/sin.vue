@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="rhyme" v-for="r in range" v-if="r < 70 || r > 130"> 
+    <div class="rhyme" v-for="r in 200" v-if="r < 70 || r > 130"> 
       <div class="dot" 
         :style="{top: 50+Math.sin(r*3.14/200*2)*55+'vh',
                  left:r/2+'%',
@@ -26,13 +26,8 @@ export default {
     }
   },
   data () {
-    var rg = []
-    for (var i = 0; i < 200; i++) {
-      rg.push(i)
-    }
     return {
-      range: rg// ,
-//      color: 'green'
+      test: '...'
     }
   },
   methods: {
