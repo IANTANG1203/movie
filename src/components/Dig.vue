@@ -5,20 +5,20 @@
     //p.gray(v-for="(m, $idx) in ms", v-if="p.p==$idx") {{m}}
     p.choice
       span(v-for="(t, $index) in ['歸零','','','','工程師','設計師','黑客']", v-if ="t")
-        input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p)")
+        input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p, advs)")
         | {{t}}
     transition-group.ui.list(name="list", tag = "div")
       span.item(v-for="(i, $idx) in checkedFirst(advs)", :key="i.t", :class="{active: i.checked}")
         .ui.divider(v-if="$idx % 5 == 0") 
-        input.ui.checkbox(type="checkbox", v-model="i.checked")
+        input.ui.checkbox(type="checkbox", v-model="i.checked", @change="p.p = -1")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
           span.gray(v-if="i.note") &nbsp;({{i.note}})
           i.chevron.right.icon(v-show="i.checked")
         span(v-else) {{i.t}}
           span.gray(v-if="i.note") &nbsp;({{i.note}})
     .ui.divider
-    p(:class="{red:countDbl(8)}") 預計{{countDbl()}}小時
-      span(v-if="countDbl(8)") !(超過一天了)
+    p(:class="{red:countAll(advs, 8)}") 預計{{countAll(advs)}}小時
+      span(v-if="countAll(advs, 8)") !(超過一天了)
 </template>
 
 <script>
@@ -39,19 +39,7 @@ export default {
     }
   },
   methods: {
-    countDbl: function (n, m) {
-      var num = this.advs.filter(function (o) {
-        return o.checked
-      }).length * 1
-      return n ? num > n : num
-    },
-    checkP: function (p) {
-      this.advs = this.advs.map(function (o) {
-        o.checked = false
-        if (o.p && o.p.indexOf(p) > -1) o.checked = true
-        return o
-      })
-    }
+    // ...
   }
 }
 </script>
