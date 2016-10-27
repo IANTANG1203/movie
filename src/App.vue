@@ -22,8 +22,7 @@
           i.github.icon
   #main
     transition(name='fade', mode='out-in')
-      router-view(:items='items', :advs='advs', :p='p', :checkedFirst='checkedFirst')
-
+      router-view(:items='items', :advs='advs', :p='p')
 </template>
 
 <script>
@@ -74,14 +73,6 @@ export default {
   methods: {
     test: function () {
       this.$router.push('/dig')
-    },
-    checkedFirst: function (list) {
-      var ft = list.filter((o) => { return o.checked })
-      if (!ft[0]) {
-        return list
-      } else {
-        return ft
-      }
     }
   }
 }

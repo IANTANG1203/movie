@@ -25,10 +25,12 @@
 
 <script>
 import measure from './measure'
+import checker from '../mixins/checker.js'
 
 export default {
   name: 'Start',
-  props: ['items', 'p', 'checkedFirst'],
+  props: ['items', 'p'], // , 'checkedFirst'
+  mixins: [checker],
   components: {
     measure
   },

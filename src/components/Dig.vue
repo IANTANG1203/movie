@@ -23,10 +23,12 @@
 
 <script>
 import measure from './measure'
+import checker from '../mixins/checker.js'
 
 export default {
   name: 'Dig',
-  props: ['advs', 'p', 'checkedFirst'],
+  props: ['advs', 'p'],
+  mixins: [checker],
   components: {
     measure
   },
