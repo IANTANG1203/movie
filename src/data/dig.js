@@ -8,6 +8,7 @@ export default [
   {t: '串列漸變', p: '5', checked: false, h: 'https://vuejs.org/guide/transitions.html#List-Transitions'},
   {t: 'Webpack使用方式', p: '6', checked: false, h: 'http://webpack.github.io/docs/usage.html'},
   {t: 'Webpack載入子', p: '6', checked: false, h: 'http://webpack.github.io/docs/using-loaders.html'},
+  {t: 'Vue-Firebase', p: '6', checked: false, h: 'https://github.com/vuejs/vuefire'},
   {t: '自訂Vue模組(Modules)', p: '6', checked: false, h: 'https://vuejs.org/guide/plugins.html'},
   {t: '自訂Vue的模版(Boilerplates)', p: '6', checked: false}
 ]

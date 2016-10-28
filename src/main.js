@@ -5,11 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store' // vuex store instance
 import { sync } from 'vuex-router-sync'
-import VueResource from 'vue-resource'
 import * as filters from './filters'
 
-// use http
+import VueResource from 'vue-resource'
+import VueFire from 'vuefire'
+
 Vue.use(VueResource)
+Vue.use(VueFire)
 
 // sync the router with the vuex store.
 // this registers `store.state.route`
