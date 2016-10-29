@@ -13,7 +13,7 @@
             .text {{a.text}}
             .actions
               a.reply Reply
-              a.delate Delete
+              a.delete(@click="removeComment(a['.key'])") Delete
           .comments(v-if="a.replys")
             .comment(v-for="r in a.replys")
               a.avatar
@@ -25,12 +25,12 @@
                 .text {{r.text}}
                 .actions
                   a.reply Reply
-                  a.delate Delete
+                  a.delete.disabled(@click="removeReply()") Delete
      
-        form.ui.reply.form
-          .field
-            textarea(rs="8", v-model="newText", placeholder="add your comment...", @keyup.enter="submit(newText); newText = ''")
-          .ui.blue.labeled.submit.icon.button(@click="submit(newText); newText = ''")
+        form.ui.reply.form(@submit.prevent="submit(newText); newText = ''")
+          textarea(rs="8", v-model="newText", placeholder="add your comment...", @keyup.enter="submit(newText); newText = ''")
+          
+          .ui.blue.labeled.submit.icon.button
             i.icon.edit
             |  Add Reply
 
@@ -66,8 +66,16 @@ export default {
       this.$firebaseRefs.anArray.push({
         name: name || '匿名人士',
         text: txt,
-        time: (new Date()).getMilliseconds() // bug here...
+        time: (new Date()).getTime()
       })
+    },
+    removeComment (key) {
+      if (window.confirm('你確定嗎?')) {
+        this.$firebaseRefs.anArray.child(key).remove()
+      }
+    },
+    removeReply (keyA, keyR) {
+      // ...
     }
     // ...
   }

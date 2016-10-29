@@ -8,5 +8,5 @@ export function json (obj) {
 }
 
 export function timestamp (timePosted) {
-  return (new Date(timePosted * 1000)).toLocaleString()
+  return (new Date(timePosted)).toLocaleString()
 }

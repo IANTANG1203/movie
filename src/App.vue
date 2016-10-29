@@ -73,6 +73,7 @@ body {
   max-width: 600px !important;
 }
 
+
 #app {
   color: #2c3e50;
   max-width: 600px;
@@ -84,6 +85,10 @@ body {
 #app a, #app nav .ui.dropdown.simple.item {
   color: #42b983;
   text-decoration: none;
+  &.disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
 }
 
 .logo {
