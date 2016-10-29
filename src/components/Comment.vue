@@ -9,7 +9,7 @@
           |  留言
       .ui.comments
         h3.ui.dividing.header 留言板
-        .comment(v-for="a in reverse(anArray)")
+        .comment(v-for="(a, $idx) in reverse(anArray)")
           a.avatar
             img(src='../../static/bear.png')
           .content
@@ -18,7 +18,7 @@
               span.date {{a.time | timestamp}}
             .text {{a.text}}
             .actions
-              a.reply(@click="editReply = true") 回覆
+              a.reply(@click="editR($idx)") 回覆
               a.delete(@click="removeComment(a['.key'])") 刪除
 
           .comments(v-if="a.reply")
@@ -34,9 +34,9 @@
                   a.reply.disabled 回覆
                   a.delete.disabled(@click="removeReply()") 刪除
 
-            form(v-if="editReply")
-              textarea(v-model="myReply")
-              .ui.small.button(@click="reply(a['.key'], a, myReply)") 回覆 {{myReply}}
+          form(v-show="editReply[$idx]")
+            textarea(v-model="myReply")
+            .ui.small.button(@click="reply(a['.key'], a, myReply)") 回覆 {{myReply}}
      
 
 
@@ -64,7 +64,7 @@ export default {
   data () {
     return {
       newText: '',
-      editReply: false,
+      editReply: [false, false, false, false, false],
       myReply: ''
       // ...
     }
@@ -98,16 +98,29 @@ export default {
     },
     reply (key, item, txt) {
       var cd = this.$firebaseRefs.anArray.child(key)
-      cd.set({
-        name: item.name,
-        text: item.text,
-        time: item.time,
-        reply: [{
-          name: '匿名人士',
-          text: txt,
-          time: (new Date()).getTime()
-        }]
-      })
+      var o = {
+        name: '匿名人士',
+        text: txt,
+        time: (new Date()).getTime()
+      }
+
+    // console.log(item['.value'])
+
+      var mirror = {}
+      var ks = ['name', 'text', 'time', 'reply']
+      for (var i = ks.length - 1; i >= 0; i--) {
+        mirror[ks[i]] = item[ks[i]]
+      }
+      mirror.reply = mirror.reply || []
+      mirror.reply.push(o)
+
+      cd.set(mirror)
+      this.myReply = ''
+    },
+    editR (idx) {
+      console.log(idx)
+      console.log(this.editReply)
+      this.editReply[idx] = true
     },
     removeReply (keyA, keyR) {
       // ...
