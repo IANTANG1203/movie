@@ -10,3 +10,4 @@ export function json (obj) {
 export function timestamp (timePosted) {
   return (new Date(timePosted)).toLocaleString()
 }
+
