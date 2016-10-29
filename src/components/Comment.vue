@@ -1,7 +1,7 @@
 <template lang="jade">
   .c
     .ui.container
-      form.ui.reply.form
+      form.ui.comment.form
         textarea(rows="3", v-model="newText", placeholder="留下您的想法...", @keyup.enter="submit($event, newText)")
         
         .ui.blue.labeled.submit.icon.fluid.button(@click="submit($event, newText)")
@@ -31,12 +31,14 @@
                   span.date {{r.time | timestamp}}
                 .text {{r.text}}
                 .actions
-                  a.reply.disabled 回覆
+                  a.reply(@click="ed = $idx") 回覆
                   a.delete.disabled(@click="removeReply()") 刪除
 
-          form(v-show="ed == $idx")
-            textarea(v-model="myReply")
-            .ui.small.button(@click="reply(a['.key'], a, myReply)") 回覆 {{myReply}}
+          form.ui.reply.form(v-show="ed == $idx")
+            textarea(rows="2", v-model="myReply", placeholder="留下您的想法...", @keyup.enter="reply($event, a['.key'], a, myReply)")
+            .ui.green.labeled.submit.icon.fluid.button(@click="reply($event, a['.key'], a, myReply)")
+              i.reply.icon
+              | 回覆: {{myReply}}
      
 
 
@@ -64,7 +66,7 @@ export default {
   data () {
     return {
       newText: '',
-      ed = 0,
+      ed: -1,
       myReply: ''
       // ...
     }
@@ -96,7 +98,11 @@ export default {
         this.$firebaseRefs.anArray.child(key).remove()
       }
     },
-    reply (key, item, txt) {
+    reply (e, key, item, txt) {
+      if (e.shiftKey) {
+        console.log('換行')
+        return
+      }
       var cd = this.$firebaseRefs.anArray.child(key)
       var o = {
         name: '匿名人士',
@@ -116,6 +122,7 @@ export default {
 
       cd.set(mirror)
       this.myReply = ''
+      this.ed = -1
     },
     removeReply (keyA, keyR) {
       // ...
@@ -137,6 +144,15 @@ export default {
 
 .text {
   white-space: pre;
+}
+
+.reply {
+  textarea {
+    max-height: 4em
+  }
+  .button {
+    font-size: 0.7em
+  }
 }
 
 </style>
