@@ -2,10 +2,10 @@
   .c
     .ui.container
       .ui.comments
-        h3.ui.dividing.header Comments
+        h3.ui.dividing.header 留言板
         .comment(v-for="a in anArray")
           a.avatar
-            img(src='https://pixabay.com/static/uploads/photo/2013/07/13/01/07/polar-bear-155118_960_720.png')
+            img(src='../../static/bear.png')
           .content
             a.author {{a.name}}
             .metadata
@@ -13,10 +13,11 @@
             .text {{a.text}}
             .actions
               a.reply Reply
+              a.delate Delete
           .comments(v-if="a.replys")
             .comment(v-for="r in a.replys")
               a.avatar
-                img(src='https://pixabay.com/static/uploads/photo/2016/10/18/19/23/hare-1751147_960_720.png')
+                img(src='../../static/rabbit.png')
               .content
                 a.author {{r.name}}
                 .metadata
@@ -24,11 +25,12 @@
                 .text {{r.text}}
                 .actions
                   a.reply Reply
+                  a.delate Delete
      
         form.ui.reply.form
           .field
-            textarea(v-model="newText")
-          .ui.blue.labeled.submit.icon.button(@click="newText = ''; submit(newText)")
+            textarea(rs="8", v-model="newText", placeholder="add your comment...", @keyup.enter="submit(newText); newText = ''")
+          .ui.blue.labeled.submit.icon.button(@click="submit(newText); newText = ''")
             i.icon.edit
             |  Add Reply
 
@@ -60,8 +62,12 @@ export default {
     }
   },
   methods: {
-    submit: (txt) => {
-      // Firebase...push...txt...
+    submit (txt, name) {
+      this.$firebaseRefs.anArray.push({
+        name: name || '匿名人士',
+        text: txt,
+        time: (new Date()).getMilliseconds() // bug here...
+      })
     }
     // ...
   }
@@ -75,6 +81,7 @@ export default {
 
 .c {
   text-align: left;
+  font-size: 0.6rem;
 }
 
 </style>
