@@ -139,7 +139,7 @@ export default {
 
 .c {
   text-align: left;
-  font-size: 0.6rem;
+  font-size: 0.8rem !important;
 }
 
 .text {

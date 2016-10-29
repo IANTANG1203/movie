@@ -90,7 +90,7 @@ h1, h3 {
 }
 
 p {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-align: left;
   line-height: 160%;
   margin-bottom: 1em;
