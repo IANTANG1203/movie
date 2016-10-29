@@ -7,12 +7,13 @@
     router-link.item(to='/start', exact='') 一日上手
     .ui.simple.dropdown.item
       | 其他
-      span(v-for = "a in anArray")
       i.dropdown.icon
       .menu
         router-link.item(to='/dig') 鑽研
         router-link.item(to='/more/basic') 從頭開始
         router-link.item(to='/more/community') 社群
+        .divider
+        router-link.item(to='/comment') 留言板
         .divider
         .gray.header 關於本站
         a.item(href='https://github.com/bestian/start-vue', target="_blank") 
@@ -27,21 +28,9 @@
 </template>
 
 <script>
-import firebase from 'firebase'
-
 import sin from './components/sin'
 import items from './data/start.js'
 import advs from './data/dig.js'
-
-var config = {
-  apiKey: 'AIzaSyBD-vU6kY8qBdae1ANFCt312yiHBzcbCoI',
-  authDomain: 'start-vue.firebaseapp.com',
-  databaseURL: 'https://start-vue.firebaseio.com',
-  storageBucket: '',
-  messagingSenderId: '1094423879350'
-}
-
-var db = firebase.initializeApp(config).database()
 
 export default {
   components: {
@@ -58,23 +47,8 @@ export default {
     test: function () {
       this.$router.push('/dig')
     }
-  },
-  firebase: {
-    // simple syntax, bind as an array by default
-    anArray: db.ref('test-array'),
-    // can also bind to a query
-    // anArray: db.ref('url/to/my/collection').limitToLast(25)
-    // full syntax
-    anObject: {
-      source: db.ref('test-object'),
-      // optionally bind as an object
-      asObject: true,
-      // optionally provide the cancelCallback
-      cancelCallback: function () {}
-    }
   }
 }
-
 </script>
 
 <style lang="scss">

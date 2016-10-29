@@ -6,6 +6,7 @@ import Start from '../components/Start'
 import Dig from '../components/Dig'
 import Basic from '../components/more/Basic'
 import Community from '../components/more/Community'
+import Comment from '../components/Comment'
 
 Vue.use(Router)
 
@@ -17,6 +18,7 @@ export default new Router({
       { path: '/start', component: Start },
       { path: '/dig', component: Dig },
       { path: '/more/basic', component: Basic },
-      { path: '/more/community', component: Community }
+      { path: '/more/community', component: Community },
+      { path: '/comment', component: Comment }
   ]
 })
