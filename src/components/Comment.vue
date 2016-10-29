@@ -1,10 +1,10 @@
 <template lang="jade">
   .c
     .ui.container
-      form.ui.reply.form(@submit.prevent="submit(newText); newText = ''")
-        textarea(rows="3", v-model="newText", placeholder="留下您的想法...", @keyup.enter="submit(newText); newText = ''")
+      form.ui.reply.form
+        textarea(rows="3", v-model="newText", placeholder="留下您的想法...", @keyup.enter="submit($event, newText)")
         
-        .ui.blue.labeled.submit.icon.button
+        .ui.blue.labeled.submit.icon.fluid.button(@click="submit($event, newText)")
           i.icon.edit
           |  留言
       .ui.comments
@@ -18,10 +18,11 @@
               span.date {{a.time | timestamp}}
             .text {{a.text}}
             .actions
-              a.reply Reply
-              a.delete(@click="removeComment(a['.key'])") Delete
-          .comments(v-if="a.replys")
-            .comment(v-for="r in a.replys")
+              a.reply(@click="editReply = true") 回覆
+              a.delete(@click="removeComment(a['.key'])") 刪除
+
+          .comments(v-if="a.reply")
+            .comment(v-for="r in a.reply")
               a.avatar
                 img(src='../../static/rabbit.png')
               .content
@@ -30,8 +31,12 @@
                   span.date {{r.time | timestamp}}
                 .text {{r.text}}
                 .actions
-                  a.reply Reply
-                  a.delete.disabled(@click="removeReply()") Delete
+                  a.reply.disabled 回覆
+                  a.delete.disabled(@click="removeReply()") 刪除
+
+            form(v-if="editReply")
+              textarea(v-model="myReply")
+              .ui.small.button(@click="reply(a['.key'], a, myReply)") 回覆 {{myReply}}
      
 
 
@@ -58,7 +63,9 @@ export default {
   },
   data () {
     return {
-      newText: ''
+      newText: '',
+      editReply: false,
+      myReply: ''
       // ...
     }
   },
@@ -71,17 +78,36 @@ export default {
       // console.log(ans)
       return ans
     },
-    submit (txt, name) {
+    submit (e, txt, name) {
+      console.log(e)
+      if (e.shiftKey) {
+        console.log('換行')
+        return
+      }
       this.$firebaseRefs.anArray.push({
         name: name || '匿名人士',
         text: txt,
         time: (new Date()).getTime()
       })
+      this.newText = ''
     },
     removeComment (key) {
       if (window.confirm('確定要刪除嗎? 這動作不能回復')) {
         this.$firebaseRefs.anArray.child(key).remove()
       }
+    },
+    reply (key, item, txt) {
+      var cd = this.$firebaseRefs.anArray.child(key)
+      cd.set({
+        name: item.name,
+        text: item.text,
+        time: item.time,
+        reply: [{
+          name: '匿名人士',
+          text: txt,
+          time: (new Date()).getTime()
+        }]
+      })
     },
     removeReply (keyA, keyR) {
       // ...
@@ -99,6 +125,10 @@ export default {
 .c {
   text-align: left;
   font-size: 0.6rem;
+}
+
+.text {
+  white-space: pre;
 }
 
 </style>
