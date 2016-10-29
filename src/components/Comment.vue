@@ -18,7 +18,7 @@
               span.date {{a.time | timestamp}}
             .text {{a.text}}
             .actions
-              a.reply(@click="editR($idx)") 回覆
+              a.reply(@click="ed = $idx") 回覆
               a.delete(@click="removeComment(a['.key'])") 刪除
 
           .comments(v-if="a.reply")
@@ -34,7 +34,7 @@
                   a.reply.disabled 回覆
                   a.delete.disabled(@click="removeReply()") 刪除
 
-          form(v-show="editReply[$idx]")
+          form(v-show="ed == $idx")
             textarea(v-model="myReply")
             .ui.small.button(@click="reply(a['.key'], a, myReply)") 回覆 {{myReply}}
      
@@ -64,7 +64,7 @@ export default {
   data () {
     return {
       newText: '',
-      editReply: [false, false, false, false, false],
+      ed = 0,
       myReply: ''
       // ...
     }
@@ -116,11 +116,6 @@ export default {
 
       cd.set(mirror)
       this.myReply = ''
-    },
-    editR (idx) {
-      console.log(idx)
-      console.log(this.editReply)
-      this.editReply[idx] = true
     },
     removeReply (keyA, keyR) {
       // ...
