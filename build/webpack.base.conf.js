@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-var pathToBourbon = require('node-bourbon').includePaths;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -53,10 +52,6 @@ module.exports = {
         loader: 'jade-loader'
       },
       {
-        test: /\.(scss|sass)$/,
-        loader: 'style!css!sass?includePaths[]=' + pathToBourbon
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
@@ -100,14 +95,5 @@ module.exports = {
     child_process: 'empty'
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-     // test: /\.xxx$/, // may apply this only for some modules
-     options: {
-       sassLoader: {
-         sourceMap: true,
-         includePaths: [pathToBourbon]
-       }
-     }
-    })
   ]
 }

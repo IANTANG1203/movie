@@ -53,7 +53,6 @@ export default {
 
 <style lang="scss">
 
-@import 'bourbon';
 
 html {
   height: 100%;

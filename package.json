@@ -14,10 +14,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "bourbon": "^5.1.0",
     "firebase": "^5.5.9",
     "jade": "^1.11.0",
-    "node-bourbon": "^4.2.8",
     "node-sass": "^4.10.0",
     "sass": "^1.15.1",
     "sass-loader": "^7.1.0",

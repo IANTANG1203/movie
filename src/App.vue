@@ -53,12 +53,93 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+@import './sass/start.scss';
+
+html {
+  height: 100%;
+  font-size: 18px;
+  font-size: 3vm;
+  font-size: 3vmin;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.ui.container {
+  max-width: 600px !important;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  max-width: 600px;
+  font-family: Source Sans Pro, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#app a, #app nav .ui.dropdown.simple.item {
+  color: #42b983;
+  text-decoration: none;
+  &.disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+#main {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+}
+
+#app nav {
+  position: fixed;
+  z-index: 5;
+  margin: 0;
+  top:0;
+  left:0;
+  a {
+    @include transition(all 0.5s ease);
+    &.router-link-active {
+      background-color: #ccf !important;
+    }
+  }
+}
+
+.ui.simple.dropdown .menu {
+  @include transition(opacity 1s ease);
+}
+
+.gray {
+  color: gray !important;
+  font-size: 0.618em;
+}
+
+.fade-leave {  }
+
+.fade-leave-active {
+  @include transition(all .3s ease);
+  opacity: 0;
+}
+
+.fade-enter {
+  opacity: 0;
+  @include transform(rotateY(45deg));
+}
+
+.fade-enter-active {
+  @include transition(all .5s ease-in);
 }
 </style>
