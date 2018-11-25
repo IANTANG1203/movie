@@ -135,7 +135,6 @@ export default {
 
 
 <style lang="scss" scoped>
-@import 'bourbon';
 
 .c {
   text-align: left;

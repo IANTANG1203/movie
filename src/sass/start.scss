@@ -1,6 +1,3 @@
-
-@import "bourbon";
-
 .start {
   position: relative;
   z-index: 1;
@@ -39,8 +36,6 @@ h1 {
 }
 
 .right.bar {
-  $w: 10px;
-  $w1: 1vmax;
   $t: 0;
   position: fixed;
     z-index: 9998;
@@ -48,22 +43,22 @@ h1 {
   left: 0;
   //right: 0;
   bottom: 0;
-  width: $w;
-  width: $w1;
+  width: 10px;
+  width: 1vmax;
   border-right: 1px solid green;
   background-color: green;
-  @include background-image(linear-gradient(red, yellow, green));
+  background-image:linear-gradient(red, yellow, green);
   .door {
     position: fixed;
     z-index: 9999;
     top: $t;
     background-color: white;
-    width: $w;
-    width: $w1;
+    width: 10px;
+    width: 1vmax;
     border-top: 1px solid green;
     border-right: 1px solid green;
     border-radius: 0 0 3px 3px;
-    @include transition(bottom 0.5s ease); 
+    transition: bottom 0.5s ease; 
   }
 }
 
@@ -82,31 +77,29 @@ i.icon, i.icon::before {
 }
 
 i.chevron.right.icon {
-  @include animation(dada 1s ease 3);
+  animation:dada 1s ease 3;
 }
 
-@include keyframes(dada) {
+@keyframes dada {
   0% {position: relative; left: 0}
   50% {position: relative; left: 0.25em}
   100% {position: relative; left: 0}
 }
-
-
 
 .list-leave {
 }
 .list-leave-active {
   margin: 0;
   height: 0;
-  @include transform(translateX(50vw) rotateX(90deg));
-  @include transition(all 1s);
+  transform: translateX(50vw) rotateX(90deg);
+  transition: all 1s;
 }
 
 .list-enter {
   opacity: 0;  
-  @include transform(translateY(30px) rotateX(90deg));
+  transform: translateY(30px) rotateX(90deg);
 }
 
 .list-enter-active {
-  @include transition(all .5s);
+  transition: all .5s;
 }

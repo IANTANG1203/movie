@@ -8,11 +8,11 @@
         input(type="radio", name="p", :value="$index", v-model="p.p", @change="checkP(p.p, items)")
         | {{t}}
       span
-        | &nbsp;&nbsp;&nbsp;          
+        | &nbsp;&nbsp;&nbsp;
         router-link(to='/dig') 更深...
     transition-group.ui.list(name="list", tag = "div")
       span.item(v-for="(i, $idx) in checkedFirst(items)", :key="i.t", :class="{active: i.checked}")
-        .ui.divider(v-if="$idx % 5 == 0") 
+        .ui.divider(v-if="$idx % 5 == 0")
         input.ui.checkbox(type="checkbox", v-model="i.checked", @change="p.p = -1")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
           i.chevron.right.icon(v-show="i.checked")

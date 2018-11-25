@@ -24,38 +24,33 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-
-@import "bourbon";
+<style scoped>
 
 .right.bar {
-  $w: 10px;
-  $w1: 1vmax;
-  $t: 0;
   position: fixed;
-    z-index: 9998;
-  top: $t;
+  z-index: 9998;
+  top: 0;
   left: 0;
   //right: 0;
   bottom: 0;
-  width: $w;
-  width: $w1;
+  width: 10px;
+  width: 1vmax;
   border-right: 1px solid green;
   background-color: green;
-  @include background-image(linear-gradient(red, yellow, green));
-  .door {
-    position: fixed;
-    z-index: 9999;
-    top: $t;
-    background-color: white;
-    width: $w;
-    width: $w1;
-    border-top: 1px solid green;
-    border-right: 1px solid green;
-    border-radius: 0 0 3px 3px;
-    @include transition(bottom 0.5s ease); 
-  }
+  background-image: linear-gradient(red, yellow, green);
+}
+
+.right.bar .door {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  background-color: white;
+  width: 10px;
+  width: 1vmax;
+  border-top: 1px solid green;
+  border-right: 1px solid green;
+  border-radius: 0 0 3px 3px;
+  transition: bottom 0.5s ease;
 }
 
 </style>
-
