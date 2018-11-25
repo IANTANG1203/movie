@@ -7,7 +7,7 @@
         | 部件化的前端框架
         br
         | 結合了
-        br 
+        br
         | Angular般的寫法 + React般的引擎
         br
         br
