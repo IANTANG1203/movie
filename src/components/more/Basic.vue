@@ -1,7 +1,6 @@
 <template lang="jade">
   .basic
     h1 {{ msg }}
-    
     .ui.container
       .ui.segment
         p 起初，在瀏覽器端只有HTML，再來有了CSS，但還不能跑更複雜的程式。
@@ -66,7 +65,6 @@
 
         p
           | 透過部件相互組織而成的結構，設計師比以往更容易落實「關注點分離」，每次只改要改的部份，不必擔心牽一髮動全身。
-          
 </template>
 
 <script>

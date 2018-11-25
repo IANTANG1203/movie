@@ -9,7 +9,7 @@
         | {{t}}
     transition-group.ui.list(name="list", tag = "div")
       span.item(v-for="(i, $idx) in checkedFirst(advs)", :key="i.t", :class="{active: i.checked}")
-        .ui.divider(v-if="$idx % 5 == 0") 
+        .ui.divider(v-if="$idx % 5 == 0")
         input.ui.checkbox(type="checkbox", v-model="i.checked", @change="p.p = -1")
         a(v-if="i.h", :href="i.h", target="_blank") {{i.t}}
           span.gray(v-if="i.note") &nbsp;({{i.note}})

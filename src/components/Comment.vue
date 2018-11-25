@@ -3,7 +3,6 @@
     .ui.container
       form.ui.comment.form
         textarea(rows="3", v-model="newText", placeholder="留下您的想法...", @keyup.enter="submit($event, newText)")
-        
         .ui.blue.labeled.submit.icon.fluid.button(@click="submit($event, newText)")
           i.icon.edit
           |  留言
@@ -39,10 +38,6 @@
             .ui.green.labeled.submit.icon.fluid.button(@click="reply($event, a['.key'], a, myReply)")
               i.reply.icon
               | 回覆: {{myReply}}
-     
-
-
-
 </template>
 
 <script>
@@ -109,9 +104,6 @@ export default {
         text: txt,
         time: (new Date()).getTime()
       }
-
-    // console.log(item['.value'])
-
       var mirror = {}
       var ks = ['name', 'text', 'time', 'reply']
       for (var i = ks.length - 1; i >= 0; i--) {
@@ -131,9 +123,6 @@ export default {
   }
 }
 </script>
-
-
-
 <style lang="scss" scoped>
 
 .c {

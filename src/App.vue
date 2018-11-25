@@ -12,8 +12,8 @@
         router-link.item(to='/dig') 鑽研
         router-link.item(to='/more/basic') 從頭開始
         router-link.item(to='/more/community') 社群
-        .divider
-        router-link.item(to='/comment') 留言板
+        //.divider
+        //router-link.item(to='/comment') 留言板
         .divider
         .gray.header 關於本站
         a.item(href='https://github.com/bestian/start-vue', target="_blank")
