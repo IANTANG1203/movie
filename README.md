@@ -1,4 +1,4 @@
-# start-vue
+# movie
 
 > A Vue.js project
 

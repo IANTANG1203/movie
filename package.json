@@ -1,8 +1,8 @@
 {
-  "name": "start-vue",
+  "name": "movie",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Bestian Tang 唐宗浩 <besitan@gmail.com>",
+  "author": "Ian Tang",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -14,11 +14,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "firebase": "^5.5.9",
-    "jade": "^1.11.0",
-    "node-sass": "^4.10.0",
-    "sass": "^1.15.1",
-    "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
