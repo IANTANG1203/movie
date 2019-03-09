@@ -3,7 +3,8 @@
     <h2>我的影評</h2>
     <ol>
       <li v-for="i in items" v-bind:key="i">
-        {{ i }}
+        <h4>{{ i.n }}</h4>
+        <p>{{ i.d }}</p>
       </li>
     </ol>
   </div>
@@ -14,7 +15,9 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      items: ['銀翼殺手', '八惡人']
+      items: [
+       {n: '銀翼殺手', d: 'very good!'}, 
+       {n: '八惡人', d: 'very good!'}]
     }
   }
 }
