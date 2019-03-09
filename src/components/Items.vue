@@ -16,8 +16,9 @@ export default {
   data () {
     return {
       items: [
-       {n: '銀翼殺手', d: 'very good!'}, 
-       {n: '八惡人', d: 'very good!'}]
+        {n: '銀翼殺手', d: 'very good!'},
+        {n: '八惡人', d: 'very good!'}
+      ]
     }
   }
 }
