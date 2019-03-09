@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: "我的影評"
+      msg: '我的影評'
     }
   }
 }
@@ -37,4 +37,3 @@ img {
   width: 50%;
 }
 </style>
-
