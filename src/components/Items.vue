@@ -1,8 +1,11 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <img src="../assets/123.png">
+    <h2>我的影評</h2>
+    <ol>
+      <li v-for="i in items" v-bind:key="i">
+        {{ i }}
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -11,7 +14,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      Items: ['銀翼殺手','八惡人']  
+      items: ['銀翼殺手', '八惡人']
     }
   }
 }
@@ -21,14 +24,6 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #42b983;
