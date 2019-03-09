@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '我的影評'
+      Items: ['銀翼殺手','八惡人']  
     }
   }
 }
