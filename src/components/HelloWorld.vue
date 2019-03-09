@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
-    <img src="../assets/123">
+    <img src="../assets/123.png">
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: "我的影評"
+      msg: '我的影評'
     }
   }
 }
