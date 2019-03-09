@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <img src="../assets/123.png">
+    <router-link to="/items">
+      <img src="../assets/123.png">
+      <h4>由此進</h4>
+    </router-link>
   </div>
 </template>
 
